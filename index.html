@@ -1,0 +1,2668 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <!-- Page title -->
+        <title>Template Generator</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Raleway:300,500,800|Source+Sans+Pro:100,300,400,600,700,900" rel="stylesheet" type="text/css" />
+
+
+        <!-- Base Path to Scripts -->
+        <!-- <base href="../"> -->
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/slides.css" name="main-styles">
+        <link rel="stylesheet" href="css/custom.css" name="main-styles">
+
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-1.12.1.min.js" name="jquery"></script>
+        <script src="js/plugins.js" type="text/javascript" name="plugins"></script>
+        <script src="js/slides.js" type="text/javascript" name="main-scripts"></script>
+
+
+
+    </head>
+    <body class="slides plain   horizontal animated">
+
+
+<!-- SVG Library -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+  <symbol id="logo" viewBox="0 0 106 31"><path d="M17.413 14.04c-.56-5.84-5.6-7-8.52-7-4.6 0-8.6 2.92-8.6 7.52 0 3 2.4 4.88 5.28 5.8 4.24 1.64 5.88 1.84 5.88 3.36 0 1.08-1.2 1.72-2.32 1.72-.28 0-2.24 0-2.52-2.04h-6.6c.6 5.84 5.68 7.36 9.04 7.36 4.92 0 9.04-2.88 9.04-7.76 0-4.8-4-5.92-7.76-6.96-1.76-.52-3.4-1.2-3.4-2.2 0-.6.48-1.48 1.88-1.48 1.96 0 2.04 1.2 2.08 1.68h6.52zm2.222 15.96h6.64v-29.6h-6.64v29.6zm9.662-24.56h6.64v-5.04h-6.64v5.04zm0 24.56h6.64v-22.2h-6.64v22.2zm32.782-29.6h-6.64v9.28c-.72-.72-2.6-2.64-6.52-2.64-5.64 0-11 4.28-11 11.8 0 6.68 4.4 11.88 11.12 11.88 4.48 0 6.08-2.2 6.72-3.12v2.4h6.32v-29.6zm-17.52 18.4c0-2.56 1.8-5.56 5.64-5.56 1.56 0 2.96.56 3.96 1.56 1 .96 1.64 2.32 1.64 3.92.08 1.64-.52 3.08-1.56 4.12s-2.52 1.68-4.12 1.68c-3.12 0-5.56-2.28-5.56-5.68v-.04zm42.502 2.4c.52-4.08-.32-7.64-3.12-10.64-2.08-2.2-5-3.52-8.4-3.52-6.76 0-11.64 5.72-11.64 11.92 0 6.6 5.4 11.76 11.76 11.76 2.28 0 4.48-.68 6.32-2 1.88-1.28 3.44-3.2 4.52-5.68h-6.8c-.8 1.16-1.92 2.08-4.04 2.08-2.6 0-4.84-1.56-5.12-3.92h16.52zm-16.44-5.04c.16-1.04 1.52-3.52 4.96-3.52s4.8 2.48 4.96 3.52h-9.92zm34.502-2.12c-.56-5.84-5.6-7-8.52-7-4.6 0-8.6 2.92-8.6 7.52 0 3 2.4 4.88 5.28 5.8 4.24 1.64 5.88 1.84 5.88 3.36 0 1.08-1.2 1.72-2.32 1.72-.28 0-2.24 0-2.52-2.04h-6.6c.6 5.84 5.68 7.36 9.04 7.36 4.92 0 9.04-2.88 9.04-7.76 0-4.8-4-5.92-7.76-6.96-1.76-.52-3.4-1.2-3.4-2.2 0-.6.48-1.48 1.88-1.48 1.96 0 2.04 1.2 2.08 1.68h6.52z"/></symbol>
+
+  <symbol id="logo-icon" viewBox="0 0 50 41"><path d="M4,12h42c2.2,0,4,1.8,4,4v21c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V16C0,13.8,1.8,12,4,12z"/><path opacity="0.6" d="M45.5,9h-41C3.7,9,3,8.3,3,7.5v0C3,6.7,3.7,6,4.5,6h41C46.3,6,47,6.7,47,7.5v0C47,8.3,46.3,9,45.5,9z"/><path opacity="0.4" d="M7.5,0h35C43.3,0,44,0.7,44,1.5v0C44,2.3,43.3,3,42.5,3h-35C6.7,3,6,2.3,6,1.5v0C6,0.7,6.7,0,7.5,0z"/></symbol>
+
+  <symbol id="close" viewBox="0 0 30 30"><path d="M15 0c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15zm5.7 19.3c.4.4.4 1 0 1.4-.2.2-.4.3-.7.3s-.5-.1-.7-.3l-4.3-4.3-4.3 4.3c-.2.2-.4.3-.7.3s-.5-.1-.7-.3c-.4-.4-.4-1 0-1.4l4.3-4.3-4.3-4.3c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l4.3 4.3 4.3-4.3c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-4.3 4.3 4.3 4.3z"/></symbol>
+
+  <symbol id="menu" viewBox="0 0 22 22"><path d="M1 5h20c.6 0 1-.4 1-1s-.4-1-1-1h-20c-.6 0-1 .4-1 1s.4 1 1 1zm20 5h-20c-.6 0-1 .4-1 1s.4 1 1 1h20c.6 0 1-.4 1-1s-.4-1-1-1zm0 7h-20c-.6 0-1 .4-1 1s.4 1 1 1h20c.6 0 1-.4 1-1s-.4-1-1-1z"/></symbol>
+
+  <symbol id="share" viewBox="0 0 22 22"><path d="M21 10c-.6 0-1 .4-1 1v7h-18v-7c0-.6-.4-1-1-1s-1 .4-1 1v7c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2v-7c0-.6-.4-1-1-1zM5.5 7.5c.3 0 .5-.1.7-.3l3.8-3.8v9.6c0 .6.4 1 1 1s1-.4 1-1v-9.6l3.8 3.8c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4l-5.5-5.5c-.1-.1-.2-.2-.3-.2-.2-.1-.5-.1-.8 0l-.3.2-5.5 5.5c-.4.4-.4 1 0 1.4.2.2.4.3.7.3z"/></symbol>
+
+  <symbol id="facebook" viewBox="0 0 24 24"><path d="M24 1.3v21.3c0 .7-.6 1.3-1.3 1.3h-6.1v-9.3h3.1l.5-3.6h-3.6v-2.2c0-1.1.3-1.8 1.8-1.8h1.9v-3.2c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v2.7h-3.1v3.6h3.1v9.2h-11.5c-.7 0-1.3-.6-1.3-1.3v-21.4c0-.7.6-1.3 1.3-1.3h21.3c.8 0 1.4.6 1.4 1.3z"/></symbol>
+
+  <symbol id="fb-like" viewBox="0 0 20 20"><path d="M0 8v12h5v-12h-5zm2.5 10.8c-.4 0-.8-.3-.8-.8 0-.4.3-.8.8-.8s.8.3.8.8c0 .4-.4.8-.8.8zm3.5-.8h9.5c1.1 0 1.7-1 1.7-1.7 0-.3-.4-1-.4-1 1.4-.3 1.7-1.2 1.7-1.7-.1-.5-.3-.9-.5-1 1-.4 1.5-1.1 1.4-1.9-.1-.8-1-1.5-1-1.5 1-.6.9-1.5.9-1.5-.3-1.3-1.5-1.7-1.7-1.7h-5.6s.3-.5.3-2.4-1.3-3.6-2.6-3.6c0 0-.7.1-1 .3v3.5l-2.7 4.4v9.8z"/></symbol>
+
+  <symbol id="twitter" viewBox="0 1 24 23"><path d="M21.5 7.6v.6c0 6.6-5 14.1-14 14.1-2.8 0-5.4-.8-7.6-2.2l1.2.1c2.3 0 4.4-.8 6.1-2.1-2.2 0-4-1.5-4.6-3.4.3.1.6.1.9.1.5 0 .9-.1 1.3-.2-2.1-.6-3.8-2.6-3.8-5 .7.4 1.4.6 2.2.6-1.3-.9-2.2-2.4-2.2-4.1 0-.9.2-1.8.7-2.5 2.4 3 6.1 5 10.2 5.2-.1-.4-.1-.7-.1-1.1 0-2.7 2.2-5 4.9-5 1.4 0 2.7.6 3.6 1.6 1-.3 2.1-.7 3-1.3-.4 1.2-1.1 2.1-2.2 2.7 1-.1 1.9-.4 2.8-.8-.6 1.1-1.4 2-2.4 2.7z"/></symbol>
+
+  <symbol id="dribbble" viewBox="0 0 24 24"><path d="M12 0c-6.7 0-12 5.3-12 12s5.3 12 12 12 12-5.3 12-12-5.3-12-12-12zm7.9 5.7c1.3 1.7 2.1 3.9 2.3 6.1-.4-.1-2.4-.4-4.7-.4-.8 0-1.5 0-2.3.1 0-.1-.1-.3-.3-.5l-.7-1.5c3.7-1.4 5.3-3.4 5.7-3.8zm-7.9-3.8c2.5 0 4.9.9 6.7 2.5-.3.4-1.9 2.3-5.2 3.6-1.6-2.9-3.3-5.3-3.7-5.9.6-.1 1.4-.2 2.2-.2zm-4.4 1c.4.6 2.1 3 3.7 5.8-4.4 1.2-8.2 1.2-9.2 1.2h-.1c.8-3.1 2.9-5.6 5.6-7zm-5.7 9.1v-.3h.3c1.2 0 5.6-.1 10.1-1.5l.8 1.6c-.1 0-.3 0-.4.1-5.1 1.6-7.9 6-8.3 6.7-1.6-1.7-2.5-4.1-2.5-6.6zm10.1 10.1c-2.3 0-4.4-.8-6.1-2.1.3-.5 2.4-4.4 7.9-6.3 1.3 3.6 2 6.7 2.1 7.6-1.2.6-2.6.8-3.9.8zm5.7-1.8c-.1-.8-.7-3.6-2-7.1.7-.1 1.3-.1 2-.1 2.1 0 3.7.4 4.1.5-.3 2.8-1.8 5.2-4.1 6.7z"/></symbol>
+
+  <symbol id="pinterest" viewBox="0 0 24 24"><path d="M5.9 13.9c1.2-2-.4-2.5-.6-4-1-6.1 7.1-10.2 11.4-6 2.9 2.9 1 12-3.7 11-4.6-.9 2.2-8.1-1.4-9.5-3-1.1-4.6 3.6-3.2 5.9-.8 4-2.5 7.7-1.8 12.7 2.3-1.7 3.1-4.8 3.7-8.1 1.2.7 1.8 1.4 3.3 1.5 5.5.4 8.6-5.4 7.8-10.7-.7-4.7-5.5-7.1-10.6-6.6-4.1.4-8.1 3.7-8.3 8.3-.1 2.8.7 4.9 3.4 5.5z"/></symbol>
+
+  <symbol id="googlePlus" viewBox="0 0 24 24"><path d="M7.8 13.5h4.6c-.6 2-2.5 3.4-4.6 3.4-2.7 0-4.9-2.2-4.9-4.9s2.2-4.9 4.9-4.9c1.1 0 2.1.3 3 1l1.8-2.4c-1.4-1.1-3-1.6-4.8-1.6-4.3 0-7.9 3.5-7.9 7.9s3.5 7.9 7.9 7.9 7.9-3.5 7.9-7.9v-1.5h-7.9v3zM21.7 11v-2.2h-2v2.2h-2.2v2h2.2v2.2h2v-2.2h2.2v-2z"/></symbol>
+
+  <symbol id="stumbleupon" viewBox="0 0 24 24"><path d="M13.3 9.6l1.6.8 2.5-.8v-1.4c0-3-2.4-5.4-5.4-5.4s-5.4 2.4-5.4 5.4v7.5c0 .7-.6 1.3-1.3 1.3s-1.3-.6-1.3-1.3v-3.2h-4v3.2c0 3 2.4 5.4 5.4 5.4s5.4-2.4 5.4-5.4v-7.5c0-.7.6-1.3 1.3-1.3s1.3.6 1.3 1.3l-.1 1.4zm6.6 2.9v3.2c0 .7-.6 1.3-1.3 1.3s-1.3-.6-1.3-1.3v-3.2l-2.5.8-1.6-.8v3.2c0 3 2.4 5.4 5.4 5.4s5.4-2.4 5.4-5.4v-3.2h-4.1z"/></symbol>
+
+  <symbol id="linkedin" viewBox="0 0 24 24"><path d="M22.2 0h-20.4c-1 0-1.8.8-1.8 1.7v20.7c0 1 .8 1.7 1.8 1.7h20.5c1 0 1.8-.8 1.8-1.7v-20.7c-.1-.9-.9-1.7-1.9-1.7zm-14.9 20.2h-3.6v-10.9h3.6v10.9zm-1.8-12.4c-1.2 0-2-.8-2-1.9 0-1.1.8-1.9 2.1-1.9 1.2 0 2 .8 2 1.9-.1 1.1-.9 1.9-2.1 1.9zm14.8 12.4h-3.6v-5.8c0-1.5-.5-2.5-1.8-2.5-1 0-1.6.7-1.9 1.3-.1.2-.1.6-.1.9v6.1h-3.6v-10.9h3.6v1.5c.5-.7 1.3-1.8 3.3-1.8 2.4 0 4.2 1.6 4.2 4.9v6.3z"/></symbol>
+
+  <symbol id="apple" viewBox="-1 1 24 24"><path d="M17.6 13.8c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.3-4.4-2.4-1.9-.2-3.6 1.1-4.6 1.1-.9 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.4 1 4 1 2.7-1.5 3.7-2.9c1.2-1.7 1.6-3.3 1.7-3.4-.1-.1-3.2-1.3-3.2-4.9zm-3.1-9c.8-1 1.4-2.4 1.2-3.8-1.2 0-2.7.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z"/></symbol>
+
+  <symbol id="tumblr" viewBox="0 0 23 23"><path d="M12.573 4.94v-4.94h-3.188c-.072.183-.11.4-.11.622-.034.107-.072.184-.072.293-.328 1.829-1.28 3.11-2.892 3.807-.476.218-.914.253-1.39.218v3.987h2.342c.039 5.603.039 8.493.039 8.64v.332c.294 2.449 1.573 3.914 3.843 4.463.914.257 1.901.366 2.892.366 1.279-.036 2.525-.256 3.771-.659v-4.685c-.731.22-1.395.402-1.977.583-1.135.333-2.087.113-2.857-.619-.073-.11-.183-.257-.221-.403-.106-.586-.178-1.206-.178-1.795v-6.222h5.083v-3.988h-5.085z"/></symbol>
+
+  <symbol id="instagram" viewBox="0 0 24 24"><path d="M24,2.5C23.8,1.1,22.7,0,21.2,0C15.1,0,8.9,0,2.8,0C2.6,0,2.4,0,2.3,0C0.9,0.3,0,1.4,0,2.8C0,5.9,0,8.9,0,12
+		c0,3.1,0,6.1,0,9.2c0,0.2,0,0.3,0,0.5C0.2,23,1.4,24,2.7,24c6.2,0,12.4,0,18.5,0c0.1,0,0.2,0,0.3,0c1.4-0.2,2.4-1.3,2.4-2.7
+		c0-6.2,0-12.4,0-18.5C24,2.7,24,2.6,24,2.5z M12,7.4c2.5,0,4.6,2.1,4.6,4.6c0,2.6-2.1,4.6-4.6,4.6c-2.6,0-4.6-2.1-4.6-4.6
+		C7.4,9.5,9.5,7.4,12,7.4z M21.2,10.3c0,3.3,0,6.6,0,9.9c0,0.6-0.4,1-1,1c-5.1,0-10.3,0-15.4,0c-0.4,0-0.7,0-1.1,0c-0.6,0-1-0.4-1-1
+		c0-3.3,0-6.7,0-10c0,0,0-0.1,0-0.1c0.7,0,1.4,0,2.1,0c-0.5,1.9-0.3,3.7,0.7,5.4c0.7,1.2,1.6,2.2,2.9,2.9c2.4,1.4,5.5,1.2,7.8-0.3
+		c1.3-0.9,2.2-2,2.8-3.5c0.5-1.5,0.6-2.9,0.2-4.4c0.7,0,1.4,0,2.1,0C21.2,10.2,21.2,10.2,21.2,10.3z M21.2,6.4c0,0.5-0.4,0.9-1,0.9
+		c0,0,0,0,0,0c-0.4,0-0.9,0-1.3,0c-0.5,0-0.9,0-1.4,0c-0.5,0-0.9-0.4-0.9-0.9c0-0.9,0-1.9,0-2.8c0-0.5,0.4-0.9,0.9-0.9
+		c0.9,0,1.8,0,2.7,0c0.5,0,0.9,0.4,0.9,0.9C21.2,4.6,21.2,5.5,21.2,6.4z"/></symbol>
+
+  <symbol id="arrow-down" viewBox="0 0 24 24"><path d="M12 18c-.2 0-.5-.1-.7-.3l-11-10c-.4-.4-.4-1-.1-1.4.4-.4 1-.4 1.4-.1l10.4 9.4 10.3-9.4c.4-.4 1-.3 1.4.1.4.4.3 1-.1 1.4l-11 10c-.1.2-.4.3-.6.3z"/></symbol>
+
+  <symbol id="arrow-up" viewBox="0 0 24 24"><path d="M11.9 5.9c.2 0 .5.1.7.3l11 10c.4.4.4 1 .1 1.4-.4.4-1 .4-1.4.1l-10.4-9.4-10.3 9.4c-.4.4-1 .3-1.4-.1-.4-.4-.3-1 .1-1.4l11-10c.1-.2.4-.3.6-.3z"/></symbol>
+
+  <symbol id="arrow-left" viewBox="0 0 31 72"><path d="M30 72c-.3 0-.6-.1-.8-.4l-29-34c-.3-.4-.3-.9 0-1.3l29-36c.3-.4 1-.5 1.4-.2.4.3.5 1 .2 1.4l-28.5 35.5 28.5 33.4c.4.4.3 1.1-.1 1.4-.2.1-.5.2-.7.2z"/></symbol>
+
+  <symbol id="arrow-right" viewBox="0 0 31 72"><path d="M1 0c.3 0 .6.1.8.4l29 34c.3.4.3.9 0 1.3l-29 36c-.3.4-1 .5-1.4.2-.4-.3-.5-1-.2-1.4l28.5-35.5-28.5-33.4c-.4-.4-.3-1.1.1-1.4.2-.1.5-.2.7-.2z"/></symbol>
+
+  <symbol id="arrow-top" viewBox="0 0 24 24"><path d="M20.7 10.3l-8-8c-.4-.4-1-.4-1.4 0l-8 8c-.4.4-.4 1 0 1.4s1 .4 1.4 0l6.3-6.3v15.6c0 .6.4 1 1 1s1-.4 1-1v-15.6l6.3 6.3c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4z"/></symbol>
+
+  <symbol id="play" viewBox="0 0 30 30"><path d="M7 30v-30l22 15z"/></symbol>
+
+  <symbol id="appstoreButton" viewBox="0 0 135 40"><path fill="#000" d="M135 36.2c0 2.1-1.7 3.8-3.8 3.8h-127.4c-2.1 0-3.8-1.7-3.8-3.8v-32.3c0-2.2 1.7-3.9 3.8-3.9h127.3c2.1 0 3.8 1.7 3.8 3.8l.1 32.4z"/><path fill="#ffffff" d="M30.1 19.8c0-3.2 2.6-4.8 2.8-4.9-1.5-2.2-3.9-2.5-4.7-2.5-2-.2-3.9 1.2-4.9 1.2s-2.6-1.2-4.2-1.1c-2.1 0-4.1 1.3-5.2 3.2-2.3 3.9-.6 9.7 1.6 12.9 1.1 1.6 2.4 3.3 4 3.2 1.6-.1 2.2-1 4.2-1 1.9 0 2.5 1 4.2 1s2.8-1.6 3.9-3.1c1.3-1.8 1.8-3.5 1.8-3.6-.1-.2-3.4-1.5-3.5-5.3zM26.9 10.3c.9-1.1 1.5-2.6 1.3-4.1-1.3.1-2.8.9-3.8 1.9-.8.9-1.5 2.5-1.3 3.9 1.5.2 2.9-.6 3.8-1.7zM53.6 31.5h-2.3l-1.2-3.9h-4.3l-1.2 3.9h-2.2l4.3-13.3h2.6l4.3 13.3zm-3.8-5.5l-1.1-3.5c-.2-.4-.4-1.2-.7-2.5-.1.6-.3 1.4-.6 2.5l-1.2 3.5h3.6zM64.7 26.6c0 1.6-.4 2.9-1.3 3.9-.8.8-1.8 1.3-2.9 1.3-1.3 0-2.2-.5-2.7-1.4v5.1h-2.1v-10.4c0-1 0-2.1-.1-3.2h1.9l.1 1.5c.7-1.1 1.8-1.7 3.2-1.7 1.1 0 2.1.4 2.8 1.3.7.9 1.1 2.1 1.1 3.6zm-2.2.1c0-.9-.2-1.7-.6-2.3-.5-.6-1.1-.9-1.9-.9-.5 0-1 .2-1.4.5-.4.3-.7.8-.8 1.4-.1.3-.1.5-.1.7v1.6c0 .7.2 1.3.6 1.8s1 .7 1.7.7c.8 0 1.4-.3 1.9-.9.4-.8.6-1.6.6-2.6zM75.7 26.6c0 1.6-.4 2.9-1.3 3.9-.8.8-1.8 1.3-2.9 1.3-1.3 0-2.2-.5-2.7-1.4v5.1h-2.1v-10.4c0-1 0-2.1-.1-3.2h1.9l.1 1.5c.7-1.1 1.8-1.7 3.2-1.7 1.1 0 2.1.4 2.8 1.3.7.9 1.1 2.1 1.1 3.6zm-2.2.1c0-.9-.2-1.7-.6-2.3-.5-.6-1.1-.9-1.9-.9-.5 0-1 .2-1.4.5-.4.3-.7.8-.8 1.4-.1.3-.1.5-.1.7v1.6c0 .7.2 1.3.6 1.8.4.3 1 .5 1.7.5.8 0 1.4-.3 1.9-.9.4-.6.6-1.4.6-2.4zM88 27.8c0 1.1-.4 2.1-1.2 2.8-.9.8-2.1 1.2-3.6 1.2-1.4 0-2.6-.3-3.4-.8l.5-1.8c.9.6 2 .8 3.1.8.8 0 1.4-.2 1.9-.5.4-.4.7-.8.7-1.5 0-.5-.2-1-.6-1.4-.4-.4-1-.7-1.8-1-2.4-.9-3.6-2.2-3.6-3.9 0-1.1.4-2 1.2-2.7.8-.7 1.9-1 3.3-1 1.2 0 2.2.2 3 .6l-.5 1.8c-.8-.4-1.6-.6-2.5-.6-.8 0-1.3.2-1.8.6-.4.3-.5.7-.5 1.2s.2 1 .6 1.3c.4.3 1 .7 1.9 1 1.1.5 2 1 2.5 1.6.6.6.8 1.4.8 2.3zM95.1 23.5h-2.3v4.7c0 1.2.4 1.8 1.2 1.8.4 0 .7 0 .9-.1l.1 1.6c-.4.2-1 .2-1.7.2-.8 0-1.5-.3-2-.8s-.7-1.4-.7-2.6v-4.8h-1.4v-1.6h1.4v-1.8l2.1-.6v2.4h2.3l.1 1.6zM105.7 26.6c0 1.5-.4 2.7-1.3 3.6-.9 1-2.1 1.5-3.5 1.5s-2.5-.5-3.4-1.4c-.8-.9-1.3-2.1-1.3-3.5 0-1.5.4-2.7 1.3-3.7.9-.9 2-1.4 3.5-1.4 1.4 0 2.5.5 3.4 1.4.9.9 1.3 2.1 1.3 3.5zm-2.2.1c0-.9-.2-1.6-.6-2.3-.4-.8-1.1-1.1-1.9-1.1-.9 0-1.5.4-2 1.1-.4.6-.6 1.4-.6 2.3s.2 1.6.6 2.3c.5.8 1.1 1.1 1.9 1.1.8 0 1.5-.4 1.9-1.2.5-.6.7-1.3.7-2.2zM112.6 23.8c-.2 0-.4-.1-.7-.1-.8 0-1.3.3-1.7.8s-.5 1.1-.5 1.9v5h-2.1v-6.6c0-1.1 0-2.1-.1-3h1.9l.1 1.8h.1c.2-.6.6-1.1 1.1-1.5.5-.3 1-.5 1.5-.5h.5v2.2h-.1zM122.2 26.3c0 .4 0 .7-.1 1h-6.4c0 .9.3 1.7.9 2.2.5.4 1.2.7 2.1.7.9 0 1.8-.2 2.6-.5l.3 1.5c-.9.4-2 .6-3.2.6-1.5 0-2.7-.4-3.5-1.3s-1.3-2.1-1.3-3.5.4-2.7 1.2-3.6c.8-1 1.9-1.5 3.4-1.5 1.4 0 2.4.5 3.1 1.5.6.6.9 1.7.9 2.9zm-2.1-.6c0-.6-.1-1.2-.4-1.6-.4-.6-.9-.9-1.7-.9-.7 0-1.3.3-1.7.9-.4.5-.6 1-.6 1.7l4.4-.1zM49 10c0 1.2-.4 2.1-1.1 2.7-.7.5-1.6.8-2.8.8-.6 0-1.1 0-1.5-.1v-6.4c.6-.1 1.2-.1 1.8-.1 1.1 0 2 .2 2.6.7.7.6 1 1.4 1 2.4zm-1.1 0c0-.8-.2-1.3-.6-1.8-.4-.4-1-.6-1.8-.6-.3 0-.6 0-.8.1v4.9h.7c.8 0 1.4-.2 1.9-.7.4-.4.6-1 .6-1.9zM54.9 11c0 .7-.2 1.3-.6 1.8s-1 .7-1.7.7-1.2-.2-1.7-.7c-.4-.5-.6-1-.6-1.7s.2-1.3.6-1.8 1-.7 1.7-.7 1.2.2 1.7.7c.4.5.6 1 .6 1.7zm-1.1.1c0-.4-.1-.8-.3-1.1-.2-.4-.5-.6-.9-.6s-.7.2-1 .6c-.2.3-.3.7-.3 1.1 0 .4.1.8.3 1.1.2.4.5.6 1 .6.4 0 .7-.2.9-.6.2-.3.3-.7.3-1.1zM62.8 8.7l-1.5 4.7h-1l-.6-2c-.2-.5-.3-1-.4-1.5-.1.5-.2 1-.4 1.5l-.6 2h-1l-1.4-4.7h1.1l.5 2.3.3 1.5c.2-.4.3-.9.5-1.5l.7-2.2h.9l.6 2.2c.2.5.3 1.1.4 1.6.1-.5.2-1 .3-1.6l.6-2.2 1-.1zM68.2 13.4h-1v-2.7c0-.8-.3-1.2-1-1.2-.3 0-.6.1-.8.3-.2.2-.3.5-.3.8v2.8h-1v-4.7h.9v.7c.1-.2.3-.4.5-.6.3-.2.6-.3.9-.3.4 0 .8.1 1.1.4.4.3.5.9.5 1.6v2.9h.2zM71.1 13.4h-1v-6.9h1v6.9zM77.3 11c0 .7-.2 1.3-.6 1.8-.4.5-1 .7-1.7.7s-1.2-.2-1.7-.7c-.4-.5-.6-1-.6-1.7s.2-1.3.6-1.8c.4-.5 1-.7 1.7-.7s1.2.2 1.7.7c.4.5.6 1 .6 1.7zm-1.1.1c0-.4-.1-.8-.3-1.1-.2-.4-.5-.6-.9-.6s-.7.2-1 .6c-.2.3-.3.7-.3 1.1 0 .4.1.8.3 1.1.2.4.5.6 1 .6.4 0 .7-.2.9-.6.2-.3.3-.7.3-1.1zM82.3 13.4h-.9l-.1-.5c-.3.4-.8.7-1.4.7-.4 0-.8-.1-1.1-.4-.2-.3-.4-.6-.4-1 0-.6.2-1 .7-1.3.5-.3 1.2-.5 2-.4v-.1c0-.6-.3-.9-1-.9-.5 0-.9.1-1.2.3l-.1-.8c.4-.3 1-.4 1.6-.4 1.2 0 1.8.6 1.8 1.9v1.7c.1.6.1 1 .1 1.2zm-1.1-1.6v-.7c-1.2 0-1.7.3-1.7.9 0 .2.1.4.2.6.1.1.3.2.5.2s.4-.1.6-.2c.2-.1.3-.3.4-.6v-.2zM88.3 13.4h-.9v-.8c-.3.6-.8.9-1.5.9-.6 0-1-.2-1.4-.7-.4-.4-.6-1-.6-1.7 0-.8.2-1.4.6-1.9.4-.4.9-.7 1.5-.7s1.1.2 1.3.6v-2.7h1v5.6c-.1.6 0 1 0 1.4zm-1.1-2v-1.1c-.1-.3-.2-.5-.4-.6-.2-.2-.4-.3-.7-.3-.4 0-.7.2-.9.5-.2.3-.3.7-.3 1.2s.1.8.3 1.1c.2.3.5.5.9.5.3 0 .6-.1.8-.4.2-.2.3-.5.3-.9zM97.2 11c0 .7-.2 1.3-.6 1.8-.4.5-1 .7-1.7.7s-1.2-.2-1.7-.7c-.4-.5-.6-1-.6-1.7s.2-1.3.6-1.8 1-.7 1.7-.7 1.2.2 1.7.7c.4.5.6 1 .6 1.7zm-1 .1c0-.4-.1-.8-.3-1.1-.2-.4-.5-.6-.9-.6s-.7.2-1 .6c-.2.3-.3.7-.3 1.1 0 .4.1.8.3 1.1.2.4.5.6 1 .6.4 0 .7-.2.9-.6.2-.3.3-.7.3-1.1zM102.9 13.4h-1v-2.7c0-.8-.3-1.2-1-1.2-.3 0-.6.1-.8.3s-.3.5-.3.8v2.8h-1v-4.7h.9v.7c.1-.2.3-.4.5-.6.3-.2.6-.3 1-.3s.8.1 1.1.4c.4.3.5.9.5 1.6v2.9h.1zM109.9 9.5h-1.2v2.3c0 .6.2.9.6.9h.5v.8c-.2.1-.5.1-.8.1-.4 0-.7-.1-1-.4-.2-.3-.3-.7-.3-1.3v-2.4h-.7v-.8h.7v-.9l1-.3v1.2h1.2v.8zM115.5 13.4h-1v-2.7c0-.8-.3-1.3-.9-1.3-.5 0-.8.2-1 .7v3.2h-1v-6.9h1v2.8c.3-.5.8-.8 1.4-.8.4 0 .8.1 1.1.4.4.4.5.9.5 1.6v3h-.1zM121.2 10.9v.5h-3.2c0 .5.2.8.5 1.1.3.2.6.3 1 .3.5 0 .9-.1 1.3-.2l.2.7c-.4.2-1 .3-1.6.3-.7 0-1.3-.2-1.7-.6s-.6-1-.6-1.7.2-1.3.6-1.8c.4-.5 1-.8 1.6-.8.7 0 1.2.3 1.5.8.3.3.4.8.4 1.4zm-1-.3c0-.3-.1-.6-.2-.8-.2-.3-.5-.4-.8-.4s-.6.1-.8.4c-.2.2-.3.5-.3.8h2.1z"/></symbol>
+
+  <symbol id="login" viewBox="0 0 22 22"><path d="M13 2c0 .6.4 1 1 1h6v16h-6c-.6 0-1 .4-1 1s.4 1 1 1h6c1.1 0 2-.9 2-2v-16c0-1.1-.9-2-2-2h-6c-.6 0-1 .4-1 1zm-6.5 3.5c0 .3.1.5.3.7l3.8 3.8h-9.6c-.6 0-1 .4-1 1s.4 1 1 1h9.6l-3.8 3.8c-.2.2-.3.5-.3.7s.1.5.3.7c.4.4 1 .4 1.4 0l5.5-5.5c.1-.1.2-.2.2-.3.1-.2.1-.5 0-.8l-.2-.3-5.5-5.5c-.4-.4-1-.4-1.4 0-.2.2-.3.4-.3.7z"/></symbol>
+
+  <symbol id="chat" viewBox="0 0 22 22"><path d="M11 22c-.1 0-.3 0-.4-.1-.4-.1-.6-.5-.6-.9v-4h-7.8c-1.2 0-2.2-1-2.2-2.2v-11.6c0-1.2 1-2.2 2.2-2.2h17.7c1.1 0 2.1 1 2.1 2.2v11.7c0 1.2-1 2.2-2.2 2.2h-3.4l-4.7 4.7c-.2.1-.4.2-.7.2zm-8.8-19c-.1 0-.2.1-.2.2v11.7s.1.1.2.1h8.8c.6 0 1 .4 1 1v2.6l3.3-3.3c.2-.2.4-.3.7-.3h3.8c.1 0 .2-.1.2-.2v-11.6c0-.1-.1-.2-.2-.2h-17.6zM5 6h6v2h-6zM5 10h10v2h-10z"></path></symbol>
+
+  <symbol id="drop-down" viewBox="0 0 16 16"><polyline stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="1,5 8,12 15,5" fill="none"/></symbol>
+
+  <symbol id="direction-horizontal" viewBox="-2 6 16 16"><path d="M13.7 13.3l-5-5c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4l3.3 3.3h-11.6c-.6 0-1 .4-1 1s.4 1 1 1h11.6l-3.3 3.3c-.4.4-.4 1 0 1.4.2.2.4.3.7.3s.5-.1.7-.3l5-5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7z"/></symbol>
+
+  <symbol id="direction-vertical" viewBox="-2 6 16 16"><path d="M6.7 21.7l5-5c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-3.3 3.3v-11.6c0-.6-.4-1-1-1s-1 .4-1 1v11.6l-3.3-3.3c-.4-.4-1-.4-1.4 0-.2.2-.3.4-.3.7 0 .3.1.5.3.7l5 5c.2.2.4.3.7.3s.5-.1.7-.3z"/></symbol>
+</svg>
+
+<!-- Template #13 -->
+<style>
+.customLogo { padding-bottom:27%;}
+.customSlide .wrap { padding-top:0px; padding-bottom:0px;}
+.customBox { position:relative;}
+.customBox-2 { padding:90px 0; }
+.hr { position:relative; margin-top: 40px; margin-bottom: 80px; }
+.hr:after {
+  content: "";
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: #E3E3E3;
+	height: 1px;
+	left: 0;
+  -webkit-transform:scaleX(3);
+  transform:scaleX(3);
+}
+
+.slides .panel.top {
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.slides .panel.top a {
+	-webkit-transition: opacity 0.15s;
+	transition: opacity 0.15s;
+}
+
+.grid-68 { padding:12px 0; }
+.box-77, .name-77, .box-77 .thumbnail-77 img { border-radius:0px;}
+
+.customColor { background:#FF9057;}
+
+.image-13-1 {
+	margin: -23% 0 -6% -35%;
+  max-width:none;
+}
+
+.image-13-2 {
+	margin: -19% 0 -6% -65%;
+  max-width:none;
+}
+
+.image-13-3 {
+	margin: -21% 0 -47% 0%;
+  max-width:none;
+}
+
+@media screen and (max-width:1023px) {
+  .image-13-1,.image-13-2,.image-13-3 { max-width:100%;}
+  .image-13-1 { margin:-4% 0 0 -17.2% }
+  .image-13-2 { margin:-17% 0 0 -20%; }
+  .image-13-3 { margin:0 auto; }
+}
+
+.slide.whiteSlide form input[type="text"],
+.slide.whiteSlide form input[type="name"],
+.slide.whiteSlide form input[type="email"],
+.slide.whiteSlide form input[type="password"],
+.slide.whiteSlide form textarea {
+   box-shadow:none;
+}
+</style>
+
+
+
+<!-- Panel top #05 -->
+<nav class="panel top fixed forceMobileView  hidden-home">
+  <div class="sections desktop">
+    <div class="left">
+      <ul class="menu ">
+        <!-- <li><div class="right"><a href="#"><img src="http://images.discoveryourpra.com/images/pra-header-logo.png" alt="PRA Health Sciences Logo" style="width:auto;height:31px"></a></div></li> -->
+        <li> <div class=""><a class="button round uppercase black   " style="    padding: 1em 3em !important;"  href="index.html">NEW USER</a></div>
+</li>
+      </ul>
+      </div>
+    <!-- <div class="left"><a class="button round uppercase pink    ">GO BACK</a></div> -->
+    <div class="right">
+      <ul class="menu ">
+        <li><div class="right"><a class="button round uppercase pink   " style="    padding: 1em 3em !important;" href="index.html#contact">SURVEY</a></div></li>
+        <li> <div class=""><a class="button round uppercase black   " style="    padding: 1em 3em !important;"  href="index.html#intro">START OVER</a></div>
+</li>
+      </ul>
+
+
+    </div>
+
+  </div>
+</nav>
+
+<!-- Sidebar -->
+
+
+<nav class="sidebar " data-sidebar-id="1">
+  <span class=" actionButton sidebarTrigger" data-sidebar-id="1"><img src="assets/img/close.png" alt="Picture" class="sidebar-open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="file:///Users/clarkjon/Documents/sites/Slides/ASCO/templates/template-13.html#menu"></use></span>
+
+  <!-- <div class="content-close">
+    <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+    <img src="assets/img/close.png" alt="Picture" class="">
+  </div> -->
+
+  <div class="content">
+    <ul class="mainMenu uppercase">
+      <li class="nav-block  gradient-1 " style="height: 20vh;  text-align: center; padding-top: 80px;"><a href="#am-begin"><h5 class="title" style="border-bottom: solid 1px rgba(255, 255, 255, 0.12);">Risk-Based or Adaptive Monitoring
+ </h5><br><span>Powered by Emmi</span></a>
+
+</li>
+      <li class="nav-block  gradient-2 " style="height: 20vh;  text-align: center; padding-top: 80px;"><a href="#emmi-begin"><h5 class="title" style="border-bottom: solid 1px rgba(255, 255, 255, 0.12);">Patient Engagement
+ </h5><br><span>Powered by Emmi</span></a></li>
+      <li class="nav-block  gradient-3 " style="height: 20vh;  text-align: center; padding-top: 80px;"><a href="#tableau-1"><h5 class="title" style="border-bottom: solid 1px rgba(255, 255, 255, 0.12);">Tableau Data Experience 1  </h5><br><span>Throughout Clinical Trials</span></a></li>
+      <li class="nav-block  gradient-4 " style="height: 20vh;  text-align: center; padding-top: 80px;"><a href="#tableau-2"><h5 class="title" style="border-bottom: solid 1px rgba(255, 255, 255, 0.12);">Tableau Data Experience 2
+ </h5><br><span>Building a Client-Specific Engagement Program</span></a></li>
+    </ul>
+
+  </div>
+</nav>
+
+<!-- SPLASH SCREEN -->
+<section class=" slide  ">
+  <div class="content  background gradient-4">
+    <div class="container">
+      <div class="wrap">
+        <div class="col-6-12" style="">
+
+        <div class="left  col-6-12">
+        <h3 class="uppercase ae-1">PRA HEALTH SCIENCES</h3>
+        <h1 class=" ae-2 bold avenir">Where Data meets Insight </h1>
+      </div>
+      <div class="left col-6-12" style="">
+        <a class="button round uppercase pink ae-5 fromAbove" href="#intro">Begin Experience</a>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="background" style="background-image:url(assets/img/gif.gif)"></div> -->
+</section>
+
+<!-- END SPLASH SCREEN -->
+
+
+
+<!-- BEGIN INTRO SLIDE -->
+<section id="intro" class=" slide whiteSlide" name="intro">
+  <div class="content background background-1">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+          <div class="fix-12-12">
+            <h1 class="ae-1  sourceSans light  small">Select your experience:</h1>
+
+          </div>
+          <ul class="grid fixedSpaces equal fromCenter">
+            <li class="col-6-12">
+
+                <div class="fix-8-12 box-54">
+          <a href="#am-begin" class="deep_shadow"><div class="pad ae-4 shadow pad-54  ">
+            <h3 class=" equalElement ae-7  " style="height: 81px;">Risk-Based or Adaptive Monitoring
+<br>
+</h3>
+            <div class="button pink round wide uppercase button-54 ae-8 gradient-1">Start Here</div>
+          </div></a>
+        </div>
+
+            </li>
+            <li class="col-6-12">
+
+                <div class="fix-8-12 box-54">
+          <a href="#emmi-begin"><div class="pad ae-4 shadow pad-54  ">
+            <h3 class=" equalElement ae-7  " style="height: 81px;">Patient Engagement
+       </h5><br><span>Powered by Emmi</span>
+<br>
+</h3>
+            <div class="button pink round wide uppercase button-54 ae-8 gradient-2">Start Here</div>
+          </div></a>
+        </div>
+
+            </li>
+            <li class="col-6-12">
+
+              <div class="fix-8-12 box-54">
+          <a href="#tableau-1"><div class="pad ae-4 shadow pad-54  ">
+            <h3 class=" equalElement ae-7  " style="height: 81px;">Tableau Data Experience 1
+<br>
+</h3>
+            <div class="button pink round wide uppercase button-54 ae-8 gradient-3">Start Here</div>
+          </div></a>
+        </div>
+
+            </li>
+            <li class="col-6-12">
+
+              <div class="fix-8-12 box-54">
+          <a href="#tableau-2"><div class="pad ae-4 shadow pad-54  ">
+            <h3 class=" equalElement ae-7  " style="height: 81px;">Tableau Data Experience 1
+<br>
+</h3>
+            <div class="button pink round wide uppercase button-54 ae-8 gradient-4">Start Here</div>
+          </div></a>
+        </div>
+
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- END INTRO SLIDE -->
+
+<!-- Slide #79 -->
+<section id="intro" class=" slide whiteSlide" name="am-begin">
+  <div class="content background gradient-1">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+          <div class="fix-10-12">
+            <h1 class="small ae-1 sourceSans  light">How Much Do You Know About Risk-Based or Adaptive Monitoring?</h1>
+
+          </div>
+          <ul class="grid fixedSpaces equal fromCenter">
+            <li class="col-4-12">
+
+                <div class="fix-5-12 box-54">
+          <a href="#am-1" class="deep_shadow"><div class="pad ae-4 shadow pad-54  ">
+            <p class="small equalElement ae-7  " style="height: 81px;">Risk-Based or Adaptive Monitoring are new concepts to me.
+<br>
+</p>
+            <div class="button pink round wide uppercase button-54 ae-8  ">Start Here</div>
+          </div></a>
+        </div>
+
+            </li>
+            <li class="col-4-12">
+
+                <div class="fix-5-12 box-54">
+          <a href="#am-5"><div class="pad ae-4 shadow pad-54  ">
+            <p class="small equalElement ae-7  " style="height: 81px;">I know a little bit about Risk-Based or Adaptive Monitoring.
+<br>
+</p>
+            <div class="button pink round wide uppercase button-54 ae-8  "><a href="#slide-13">Start Here</a></div>
+          </div></a>
+        </div>
+
+            </li>
+            <li class="col-4-12">
+
+              <div class="fix-5-12 box-54">
+          <a href="#am-5"><div class="pad ae-4 shadow pad-54  ">
+            <p class="small equalElement ae-7  " style="height: 81px;">I know Transcelerate and/or am experienced.
+<br>
+</p>
+            <div class="button pink round wide uppercase button-54 ae-8  ">Start Here</div>
+          </div></a>
+        </div>
+
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Slide #73 -->
+<section class="slide whiteSlide" name="am-1">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed p-70" style="padding-bottom: 80px !important">
+
+          <ul class="grid">
+            <li class="col-9-12 left box-73 ">
+              <h3 class="uppercase ae-1">Industry Challenges Ahead</h3>
+              <!-- <h1 class="sourceSans ultraBold small ae-2">Industry Challenges Ahead
+</h1> -->
+<li class="col-12-12  ae-1 fromRight pt  center">
+  <img class="" style="width: 90%" src="assets/images/slide-3.1.png" alt=""/>
+</li>
+            </li>
+
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide #73 -->
+<section class="slide whiteSlide " name="am-2">
+  <div class="content content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+
+
+          <ul class="grid">
+            <li class="col-6-12 ae-1 left ">
+              <h3 class="uppercase ae-1">INDUSTRY PROBLEM</h3>
+              <h1 class="sourceSans ultraBold small ae-2">The business model for new drug development is not stable or sustainable.</h1>
+            </li>
+              <li class="col-6-12 ae-1 left ">
+
+              <ul class="grid equal later  pt">
+                <li class="col-12-12 ae-5    bullet" >
+                  <!-- <h3 class="uppercase">Mockup</h3> -->
+                  <p class="small">Rate of new product approvals is inadequate.</p>
+                </li>
+                <li class="col-12-12 ae-6    bullet" >
+                  <!-- <h3 class="uppercase">Layers</h3> -->
+                  <p class="small">Reimbursement is more and more difficult.</p>
+                </li>
+                <li class="col-12-12 ae-7    bullet" >
+                  <!-- <h3 class="uppercase">Branding</h3> -->
+                  <p class="small">Development costs are too high.</p>
+                </li>
+                <li class="col-12-12 ae-8    bullet" >
+                  <!-- <h3 class="uppercase">Present</h3> -->
+                  <p class="small">Too many investigational products are failing and failing late.</p>
+                </li>
+                <li class="col-12-12 ae-9    bullet" >
+                  <!-- <h3 class="uppercase">Present</h3> -->
+                  <p class="small">Regulators more active with use of analytics and less tolerant of trial issues.</p>
+                </li>
+
+              </ul>
+            </li>
+            <!-- <li class="col-6-12 left ae-1 fromRight">
+              <img class="image-13-1" src="assets/img/jenga-bg.png" alt="Radio Image"/>
+            </li> -->
+            <li class="col-6-12 left">
+                <!-- <h2 class="small ae-3  ">GENERAL FEATURES</h2>
+                <div class="ae-4  ">
+                  <p class="noto">Building quality-by-design into trials  Early and ongoing risk assessment.  Focus on critical processes and critical data .  Use of quality indicators and thresholds(via dashboards) .  Adjustment of monitoring activities based on the issues and risks identified throughout the study (Risk assessment meetings).   
+.</p>
+                </div> -->
+
+              </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink   prevSlide ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- <div class="background" style="background-image:url(assets/img/jenga-bg.png)"></div> -->
+
+</section>
+
+<!-- Slide #73 -->
+<section class="slide whiteSlide" name="am-3">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+
+          <ul class="grid">
+            <li class="col-6-12 left box-73">
+              <h3 class="uppercase ae-1">INDUSTRY GUIDANCE</h3>
+              <h1 class="sourceSans ultraBold small ae-2">Transcelerate</h1>
+              <div class="ae-3"><p>Despite variability in data review activities, all companies were similar in the low rate of SDV-generated queries. </p></div>
+              <!-- <div class="ae-4"><p>In other words, they had removed all the graphic design from these photographs.</p></div> -->
+            </li>
+            <!-- <li class="col-6-12 left ae-1 fromRight">
+              <img class="image-13-1" src="assets/img/templates/img-13-1.png" alt="Radio Image"/>
+            </li> -->
+            <li class="col-6-12 left">
+                <!-- <h2 class="small ae-3  ">GENERAL FEATURES</h2>
+                <div class="ae-4  ">
+                  <p class="noto">Building quality-by-design into trials  Early and ongoing risk assessment.  Focus on critical processes and critical data .  Use of quality indicators and thresholds(via dashboards) .  Adjustment of monitoring activities based on the issues and risks identified throughout the study (Risk assessment meetings).   
+.</p>
+                </div> -->
+                <ul class="grid equal later">
+                  <li class="col-12-12 ae-5     bullet" >
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">The average % of SDV queries generated = 7.8% Only 2.4% generated on Critical Data.</p>
+                  </li>
+                  <li class="col-12-12 ae-6     bullet" >
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">SDV has a negligible effect on data quality.</p>
+                  </li>
+                  <li class="col-12-12 ae-7     bullet" >
+                    <!-- <h3 class="uppercase">Branding</h3> -->
+                    <p class="small">Metadata: Larger sample size, 1.2% of critical data changes on studies.</p>
+                  </li>
+
+
+                </ul>
+              </li>
+          </ul>
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Slide #77 -->
+<section class="slide whiteSlide autoHeight" name="am-4">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+<div class="boxed p-70">
+        <div class="col-10-12 toCenter">
+          <h2 class="small ultraBold sourceSans ae-1">Standard Risk Management Methodologies Exist for Many Industries</h2>
+          <div class="ae-2"><p>Pharma Versions are Simply an Adaptation of Those Methodologies to Clinical Development
+</p></div>
+        </div>
+        <div class="fix-12-12">
+          <ul class="grid grid-77 later equal left">
+            <li class="col-4-12">
+              <a href="#" class="box-77 ae-3 fromCenter ">
+                <div class="color-block-1">
+                  <div class="title-77  center">Guideline for Good<br> Clinical Practice</div>
+
+                </div>
+                <div class="name-77">
+
+                  <div class="author-77">
+                    <ul class="grid equal later">
+                      <li class="col-12-12 ae-5   bullet" style="height: 80px;">
+                        <!-- <h3 class="uppercase">Mockup</h3> -->
+                        <p class="small">Critical Process and Data Identification
+</p>
+                      </li>
+                      <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Layers</h3> -->
+                        <p class="small">Risk Identification</p>
+                      </li>
+                      <li class="col-12-12 ae-7   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Branding</h3> -->
+                        <p class="small">Risk Evaluation</p>
+                      </li>
+                      <li class="col-12-12 ae-8   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Present</h3> -->
+                        <p class="small">Risk Control</p>
+                      </li>
+                      <li class="col-12-12 ae-8   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Present</h3> -->
+                        <p class="small">Risk Communication</p>
+                      </li>
+                      <li class="col-12-12 ae-8   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Present</h3> -->
+                        <p class="small">Risk Review</p>
+                      </li>
+                      <li class="col-12-12 ae-8   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Present</h3> -->
+                        <p class="small">Risk Reporting</p>
+                      </li>
+
+                    </ul>
+
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="col-4-12">
+              <a href="#" class="box-77 ae-3 fromCenter ">
+                <div class="color-block-2">
+                  <div class="title-77  center">PMBOK Guide 5th Ed.
+</div>
+
+                </div>
+                <div class="name-77">
+
+                  <div class="author-77">
+                    <ul class="grid equal later">
+                      <li class="col-12-12 ae-5   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Mockup</h3> -->
+                        <p class="small">Plan Risk Management
+</p>
+                      </li>
+                      <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Layers</h3> -->
+                        <p class="small">Identify Risks
+</p>
+                      </li>
+                      <li class="col-12-12 ae-7   bullet" style="height: 80px;">
+                        <!-- <h3 class="uppercase">Branding</h3> -->
+                        <p class="small">Perform Qualitative Risk Analysis
+</p>
+                      </li>
+                      <li class="col-12-12 ae-8   bullet" style="height: 80px;">
+                        <!-- <h3 class="uppercase">Present</h3> -->
+                        <p class="small">Perform Quantitative Risk Analysis
+</p>
+                      </li>
+                      <li class="col-12-12 ae-8   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Present</h3> -->
+                        <p class="small">Plan Risk Responses</p>
+                      </li>
+                      <li class="col-12-12 ae-8   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Present</h3> -->
+                        <p class="small">Control Risks
+</p>
+                      </li>
+
+                    </ul>
+
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="col-4-12">
+              <a href="#" class="box-77 ae-3 fromCenter ">
+                <div class="color-block-3">
+                  <div class="title-77  center">ISO 31000 Risk Management – A Practical Guide for SMEs
+                  </div>
+                </div>
+                <div class="name-77">
+
+                  <div class="author-77">
+                    <ul class="grid equal later">
+                      <li class="col-12-12 ae-5   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Mockup</h3> -->
+                        <p class="small">Establish Context
+</p>
+                      </li>
+                      <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Layers</h3> -->
+                        <p class="small">Identify Risks</p>
+                      </li>
+                      <li class="col-12-12 ae-7   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Branding</h3> -->
+                        <p class="small">Analyze Risks
+</p>
+                      </li>
+                      <li class="col-12-12 ae-8   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Present</h3> -->
+                        <p class="small">Evaluated Risks
+</p>
+                      </li>
+                      <li class="col-12-12 ae-8   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Present</h3> -->
+                        <p class="small">Treat Risks
+</p>
+                      </li>
+                      <li class="col-12-12 ae-8   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Present</h3> -->
+                        <p class="small">Monitor and Review
+
+</p>
+                      </li>
+                      <li class="col-12-12 ae-8   bullet" style="height: 60px;">
+                        <!-- <h3 class="uppercase">Present</h3> -->
+                        <p class="small">Communicate and Consult
+
+</p>
+                      </li>
+
+                    </ul>
+
+                  </div>
+                </div>
+              </a>
+            </li>
+
+          </ul>
+
+
+        </div>
+
+        <div class="hr 1px" data-color="#ccc"></div>
+
+        <div style="margin-top:60px;">
+          <p class="raleway ae-3 sourceSans">PRA AM risk management methodology is consistent with ICH, Transcelerate and other Regulatory guidance.
+</p>
+
+        </div>
+        <div class="hr 1px" data-color="#ccc"></div>
+
+        <div style="display: inline-flex;">
+<div class="goback left"><a class="button round uppercase pink   prevSlide ">GO BACK</a></div>
+<div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+        </div>
+
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Slide #73 -->
+<section class="slide whiteSlide" name="am-5">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+
+          <ul class="grid">
+            <li class="col-6-12 left box-73">
+              <h3 class="uppercase ae-1">ADAPTIVE MONITORING APPROACH</h3>
+              <!-- <h1 class="sourceSans ultraBold small ae-2">Start Adventure</h1> -->
+              <div class="ae-3"><p>The adaptive monitoring approach uses quality risk management as a foundation to ensure subject safety and data quality through the implementation of the following:</p></div>
+              <!-- <div class="ae-4"><p>In other words, they had removed all the graphic design from these photographs.</p></div> -->
+            </li>
+            <!-- <li class="col-6-12 left ae-1 fromRight">
+              <img class="image-13-1" src="assets/img/templates/img-13-1.png" alt="Radio Image"/>
+            </li> -->
+            <li class="col-6-12 left">
+                <!-- <h2 class="small ae-3  ">GENERAL FEATURES</h2>
+                <div class="ae-4  ">
+                  <p class="noto">Building quality-by-design into trials  Early and ongoing risk assessment.  Focus on critical processes and critical data .  Use of quality indicators and thresholds(via dashboards) .  Adjustment of monitoring activities based on the issues and risks identified throughout the study (Risk assessment meetings).   
+.</p>
+                </div> -->
+                <ul class="grid equal later">
+                  <li class="col-12-12 ae-5   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Building quality-by-design into trials.</p>
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Early and ongoing risk assessment.</p>
+                  </li>
+                  <li class="col-12-12 ae-7   bullet" style="height: 80px;">
+                    <!-- <h3 class="uppercase">Branding</h3> -->
+                    <p class="small">Focus on critical processes and critical data.</p>
+                  </li>
+                  <li class="col-12-12 ae-8   bullet" style="height: 80px;">
+                    <!-- <h3 class="uppercase">Present</h3> -->
+                    <p class="small">Use of quality indicators and thresholds(via dashboards).</p>
+                  </li>
+                  <li class="col-12-12 ae-8   bullet" style="height: 80px;">
+                    <!-- <h3 class="uppercase">Present</h3> -->
+                    <p class="small">Adjustment of monitoring activities based on the issues and risks identified throughout the study (Risk assessment meetings).</p>
+                  </li>
+
+                </ul>
+              </li>
+          </ul>
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="slide whiteSlide " name="am-6">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <h1 class="ae-1 fromLeft sourceSans ultraBold small ">Published Regulatory and Industry Guidance for Risk Based Monitoring</h1>
+              <div class="ae-2 fromLeft light ">
+                <!-- <p class="cropBottom template-text-11">Published Regulatory and Industry Guidance for Risk Based Monitoring.</p> -->
+              </div>
+            </li>
+            <li class="col-6-12 ae-1 equalElement toRight " data-action="zoom" style="height: 207px;">
+              <img class=" slide-8"  src="assets/images/slide-8.png"  data-action="zoom">
+            </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink   prevSlide ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide whiteSlide  " name="am-7">
+  <div class="content background gradient-1">
+    <div class="container">
+      <div class="wrap">
+        <div class="col-12-12 boxed">
+
+        <div class="fix-12-12" style="position: relative;
+    left: -214px;">
+          <ul class="grid">
+            <li class="col-6-12 left cell-33">
+              <h1 class="small ae-2 fromLeft sourceSans ">Comparison: </h1>
+              <div class="ae-2 fromLeft "><p>TRADITIONAL VS. ADAPTIVE TRIAL MANAGEMENT</p></div>
+              <ul class="tabs controller uppercase raleway ae-3 fromCenter  " data-slider-id="31">
+                <li class="selected">TRADITIONAL</li>
+                <li class="">ADAPTIVE</li>
+                <li class="">COMPARE</li>
+              </ul>
+            </li>
+            <li class="col-6-12 left ae-4 fromRight ">
+              <ul class="slider" data-slider-id="31" >
+
+                <li class="col-12-12 selected">
+                  <div class="box-81 table equalElement gradient-1 left ae-5 fromLeft  " style="height: 429px;">
+                    <div class="cell left">
+                      <h3 class="small" style="color: white;">Traditional</h3>
+
+                      <ul class="grid equal later  pt">
+                        <li class="col-12-12 ae-5 bullet  bulletLight customP " >
+                          <p class="small">100% SDV</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Layers</h3> -->
+                          <p class="small">Fixed site visit intervals</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Branding</h3> -->
+                          <p class="small">Standard approach for all studies</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Responsibilities mostly limited to checking data</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Focus on correcting errors, not preventing errors</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Mockup</h3> -->
+                          <p class="small">Simple measures of performance</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Layers</h3> -->
+                          <p class="small">Create one plan, same actions for entire project</p>
+                        </li>
+                        <li class="col-12-12 ae-5 bullet   bulletLight customP " >
+                          <!-- <h3 class="uppercase">Branding</h3> -->
+                          <p class="small">Focus on repeat activity</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Handle issues as they come up</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Standard guidance from performance goals or KPIs with standard corrective actions</p>
+                        </li>
+
+                      </ul>
+
+
+                    </div>
+                  </div>
+                </li>
+                <li class="col-12-12   shiftImageVertical hide">
+                  <div class="box-81 table equalElement gradient-2 ae-8 fromRight  " style="height: 429px;">
+                    <div class="cell left">
+                      <h3 class="small" style="color: white">Adaptive</h3>
+
+                      <ul class="grid equal later  pt">
+                        <li class="col-12-12 ae-5 bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Mockup</h3> -->
+                          <p class="small">Varying levels of SDV /SDR</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Layers</h3> -->
+                          <p class="small">Central oversight and management of information</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Branding</h3> -->
+                          <p class="small">There is no standard approach</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Responsibilities include mentoring, coaching and site management</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Focus on finding, correcting and preventing errors</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Mockup</h3> -->
+                          <p class="small">Complex measures of performance using analytics and central management</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP " >
+                          <!-- <h3 class="uppercase">Layers</h3> -->
+                          <p class="small">Focus on predicting issues and prevention</p>
+                        </li>
+                        <li class="col-12-12 ae-5 bullet   bulletLight customP " >
+                          <!-- <h3 class="uppercase">Branding</h3> -->
+                          <p class="small">Agile team management, quick and precise guidance based on results</p>
+                        </li>
+
+
+
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="left ae-4 fromRight   hide ">
+                  <ul>
+                <li class="col-12-12   shiftImageVertical ">
+                  <div class="box-81 table equalElement gradient-2 ae-8 fromRight    " style="height: 429px;">
+                    <div class="cell left">
+                      <h3 class="small" style="color: white">Adaptive</h3>
+
+                      <ul class="grid equal later  pt">
+                        <li class="col-12-12 ae-5 bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Mockup</h3> -->
+                          <p class="small">Varying levels of SDV /SDR</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Layers</h3> -->
+                          <p class="small">Central oversight and management of information</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Branding</h3> -->
+                          <p class="small">There is no standard approach</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Responsibilities include mentoring, coaching and site management</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Focus on finding, correcting and preventing errors</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Mockup</h3> -->
+                          <p class="small">Complex measures of performance using analytics and central management</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Layers</h3> -->
+                          <p class="small">Focus on predicting issues and prevention</p>
+                        </li>
+                        <li class="col-12-12 ae-5 bullet   bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Branding</h3> -->
+                          <p class="small">Agile team management, quick and precise guidance based on results</p>
+                        </li>
+
+
+
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="col-12-12 left shiftImage shiftImageVertical" style="
+    margin-left: -540px;
+    margin-top: 0px;
+">
+                  <div class="box-81 table equalElement gradient-1 left ae-5 fromLeft    " style="height: 429px;">
+                    <div class="cell left">
+                      <h3 class="small" style="color: white;">Traditional</h3>
+
+                      <ul class="grid equal later  pt">
+                        <li class="col-12-12 ae-5 bullet  bulletLight customP   ">
+                          <p class="small">100% SDV</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Layers</h3> -->
+                          <p class="small">Fixed site visit intervals</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Branding</h3> -->
+                          <p class="small">Standard approach for all studies</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Responsibilities mostly limited to checking data</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Focus on correcting errors, not preventing errors</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Mockup</h3> -->
+                          <p class="small">Simple measures of performance</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Layers</h3> -->
+                          <p class="small">Create one plan, same actions for entire project</p>
+                        </li>
+                        <li class="col-12-12 ae-5 bullet   bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Branding</h3> -->
+                          <p class="small">Focus on repeat activity</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Handle issues as they come up</p>
+                        </li>
+                        <li class="col-12-12 ae-5  bullet  bulletLight customP   ">
+                          <!-- <h3 class="uppercase">Present</h3> -->
+                          <p class="small">Standard guidance from performance goals or KPIs with standard corrective actions</p>
+                        </li>
+
+                      </ul>
+
+
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="hr 1px" data-color="#ccc"></div>
+
+        <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+        </div>
+      </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Slide #73 -->
+<section class="slide whiteSlide" name="am-8">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+
+          <ul class="grid">
+            <li class="col-6-12 left box-73">
+              <!-- <h3 class="uppercase ae-1">INDUSTRY GUIDANCE</h3> -->
+              <h1 class="sourceSans ultraBold small ae-2">PRA’s Adaptive Monitoring Solution
+</h1>
+              <div class="ae-3"><p>Provides effective risk management, project planning and visibility. </p></div>
+              <!-- <div class="ae-4"><p>In other words, they had removed all the graphic design from these photographs.</p></div> -->
+            </li>
+            <!-- <li class="col-6-12 left ae-1 fromRight">
+              <img class="image-13-1" src="assets/img/templates/img-13-1.png" alt="Radio Image"/>
+            </li> -->
+            <li class="col-6-12 left">
+                <!-- <h2 class="small ae-3  ">GENERAL FEATURES</h2>
+                <div class="ae-4  ">
+                  <p class="noto">Building quality-by-design into trials  Early and ongoing risk assessment.  Focus on critical processes and critical data .  Use of quality indicators and thresholds(via dashboards) .  Adjustment of monitoring activities based on the issues and risks identified throughout the study (Risk assessment meetings).   
+.</p>
+                </div> -->
+                <ul class="grid equal later">
+                  <li class="col-12-12 ae-5    bullet" >
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">In sync with current regulatory guidance, upcoming ICH GCP revisions and industry best practices.</p>
+                  </li>
+                  <li class="col-12-12 ae-6    bullet" >
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">All risks are articulated, assessed, documented and have a clear measure and source for day-to-day monitoring.</p>
+                  </li>
+                  <li class="col-12-12 ae-7    bullet" >
+                    <!-- <h3 class="uppercase">Branding</h3> -->
+                    <p class="small">Potential risks are identified and clear evidence of resolution is provided - Critical from both an operational and regulatory perspective.</p>
+                  </li>
+                  <li class="col-12-12 ae-7    bullet" >
+                    <!-- <h3 class="uppercase">Branding</h3> -->
+                    <p class="small">All activities are carried out in a coherent technology and procedural ecosystem.</p>
+                  </li>
+
+
+                </ul>
+
+
+              </li>
+          </ul>
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink   prevSlide ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Slide #73 -->
+<section class="slide whiteSlide" name="am-9">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+
+          <ul class="grid">
+            <li class="col-6-12 left box-73">
+              <!-- <h3 class="uppercase ae-1">INDUSTRY GUIDANCE</h3> -->
+              <h1 class="sourceSans ultraBold small ae-2">PRA’s Adaptive Monitoring Process
+</h1>
+              <!-- <div class="ae-3"><p>Provides effective risk management, project planning and visibility. </p></div> -->
+              <!-- <div class="ae-4"><p>In other words, they had removed all the graphic design from these photographs.</p></div> -->
+            </li>
+
+            <li class="col-6-12 left">
+                <!-- <h2 class="small ae-3  ">GENERAL FEATURES</h2>
+                <div class="ae-4  ">
+                  <p class="noto">Building quality-by-design into trials  Early and ongoing risk assessment.  Focus on critical processes and critical data .  Use of quality indicators and thresholds(via dashboards) .  Adjustment of monitoring activities based on the issues and risks identified throughout the study (Risk assessment meetings).   
+.</p>
+                </div> -->
+                <li class="col-6-12 left ae-1 fromRight">
+                  <img class="" style="width: 100%" src="assets/images/slide-27.png" alt="Radio Image"/>
+                </li>
+              </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Slide #73 -->
+<section class="slide whiteSlide" name="am-10">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+
+          <ul class="grid">
+            <li class="col-6-12 left box-73">
+              <h3 class="uppercase ae-1">Risk Assessment and Categorization Tool</h3>
+              <!-- <h1 class="sourceSans ultraBold small ae-2">Start Adventure</h1> -->
+              <div class="ae-3"><p>PRAHS version of Risk Assessment and Categorization Tool (RACT) is Adaptive Monitoring Assessment Tool (AMAT)
+</p></div>
+              <!-- <div class="ae-4"><p>In other words, they had removed all the graphic design from these photographs.</p></div> -->
+            </li>
+            <!-- <li class="col-6-12 left ae-1 fromRight">
+              <img class="image-13-1" src="assets/img/templates/img-13-1.png" alt="Radio Image"/>
+            </li> -->
+            <li class="col-6-12 left">
+                <!-- <h2 class="small ae-3  ">GENERAL FEATURES</h2>
+                <div class="ae-4  ">
+                  <p class="noto">Building quality-by-design into trials  Early and ongoing risk assessment.  Focus on critical processes and critical data .  Use of quality indicators and thresholds(via dashboards) .  Adjustment of monitoring activities based on the issues and risks identified throughout the study (Risk assessment meetings).   
+.</p>
+                </div> -->
+                <ul class="grid equal later">
+                  <li class="col-12-12 ae-5   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Created by TransCelerate and modified by Adaptive Monitoring Initiative.</p>
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Used to Facilitate Risk Assessment and Mitigations Plans
+</p>
+
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Consideration of risk related to impact and likelihood of error</p>
+
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">All RISK should be managed
+</p>
+
+                  </li>
+
+
+                </ul>
+              </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+<!-- Slide #73 -->
+<section class="slide whiteSlide" name="am-11">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+
+          <ul class="grid">
+            <li class="col-6-12 left box-73">
+              <h3 class="uppercase ae-1">Risk Assessment and Categorization Tool</h3>
+              <h1 class="sourceSans ultraBold small ae-2">Adaptive Monitoring Assessment Tool (AMAT)</h1>
+
+              <!-- <div class="ae-4"><p>In other words, they had removed all the graphic design from these photographs.</p></div> -->
+            </li>
+            <!-- <li class="col-6-12 left ae-1 fromRight">
+              <img class="image-13-1" src="assets/img/templates/img-13-1.png" alt="Radio Image"/>
+            </li> -->
+            <li class="col-6-12 left">
+                <!-- <h2 class="small ae-3  ">GENERAL FEATURES</h2>
+                <div class="ae-4  ">
+                  <p class="noto">Building quality-by-design into trials  Early and ongoing risk assessment.  Focus on critical processes and critical data .  Use of quality indicators and thresholds(via dashboards) .  Adjustment of monitoring activities based on the issues and risks identified throughout the study (Risk assessment meetings).   
+.</p>
+                </div> -->
+                <div class="ae-3"><p>Why use?
+  </p></div>
+                <ul class="grid equal later">
+                  <li class="col-12-12 ae-5   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Created by TransCelerate and modified by Adaptive Monitoring Initiative.</p>
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Used to Facilitate Risk Assessment and Mitigations Plans
+</p>
+
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Consideration of risk related to impact and likelihood of error</p>
+
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">All RISK should be managed
+</p>
+
+                  </li>
+
+
+                </ul>
+              </li>
+          </ul>
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- Slide #73 -->
+<section class="slide whiteSlide" name="am-12">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+
+          <ul class="grid">
+            <li class="col-6-12 left box-73">
+              <h3 class="uppercase ae-1">Project Start up
+Adaptive trial management design</h3>
+              <h1 class="sourceSans ultraBold small ae-2">Team creates the overall adaptive trial design or scheme based on AMAT</h1>
+
+              <!-- <div class="ae-4"><p>In other words, they had removed all the graphic design from these photographs.</p></div> -->
+            </li>
+            <!-- <li class="col-6-12 left ae-1 fromRight">
+              <img class="image-13-1" src="assets/img/templates/img-13-1.png" alt="Radio Image"/>
+            </li> -->
+            <li class="col-6-12 left">
+                <!-- <h2 class="small ae-3  ">GENERAL FEATURES</h2>
+                <div class="ae-4  ">
+                  <p class="noto">Building quality-by-design into trials  Early and ongoing risk assessment.  Focus on critical processes and critical data .  Use of quality indicators and thresholds(via dashboards) .  Adjustment of monitoring activities based on the issues and risks identified throughout the study (Risk assessment meetings).   
+.</p>
+                </div> -->
+                <div class="ae-3"><p>The trial scheme includes: </p></div>
+                <ul class="grid equal later">
+                  <li class="col-12-12 ae-5   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Frequency of analytic reviews.</p>
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Identification of protocol key risk indicators
+</p>
+
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Level of SDR
+</p>
+
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Level of SDV (Based on needs of that study and sponsor’s risk tolerance)
+</p>
+
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Type of central monitoring involvement
+
+</p>
+
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Monitoring Scheme and rules for escalation
+
+</p>
+
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Safety cuts for DSMB and/or DMC meetings
+</p>
+
+                  </li>
+                  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Interim analysis, blinded data reviews
+
+</p>
+
+                  </li>
+
+
+                </ul>
+              </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+<!-- Slide #73 -->
+<section class="slide whiteSlide" name="am-13">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+
+          <ul class="grid">
+            <li class="col-6-12 left box-73">
+              <!-- <h3 class="uppercase ae-1">Why is Central Detectability Critical?</h3> -->
+              <h1 class="sourceSans ultraBold small ae-2">Why is Central Detectability Critical?</h1>
+
+
+
+            </li>
+            <!-- <li class="col-6-12 left ae-1 fromRight">
+              <img class="image-13-1" src="assets/img/templates/img-13-1.png" alt="Radio Image"/>
+            </li> -->
+            <li class="col-6-12 left">
+                <!-- <h2 class="small ae-3  ">GENERAL FEATURES</h2>
+                <div class="ae-4  ">
+                  <p class="noto">Building quality-by-design into trials  Early and ongoing risk assessment.  Focus on critical processes and critical data .  Use of quality indicators and thresholds(via dashboards) .  Adjustment of monitoring activities based on the issues and risks identified throughout the study (Risk assessment meetings).   
+.</p>
+                </div> -->
+                <div class="ae-3"><p>From the AMAT we assess risk and utilize technology to support the following:
+</p></div>
+
+<ul class="grid equal later">
+  <li class="col-12-12 ae-5   bullet" style="height: 60px;">
+    <!-- <h3 class="uppercase">Mockup</h3> -->
+    <p class="small">Real-time review</p>
+  </li>
+  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+    <!-- <h3 class="uppercase">Layers</h3> -->
+    <p class="small">Queries automatically going to site
+
+</p>
+
+  </li>
+  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+    <!-- <h3 class="uppercase">Layers</h3> -->
+    <p class="small">Medical Monitor review
+
+</p>
+
+  </li>
+  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+    <!-- <h3 class="uppercase">Layers</h3> -->
+    <p class="small">Off-site monitoring visits
+</p>
+
+  </li>
+  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+    <!-- <h3 class="uppercase">Layers</h3> -->
+    <p class="small">Central analytics
+
+
+</p>
+
+  </li>
+  <li class="col-12-12 ae-6   bullet" style="height: 60px;">
+    <!-- <h3 class="uppercase">Layers</h3> -->
+    <p class="small">Exploratory analysis to identify unknown risk
+</p>
+
+  </li>
+
+
+
+</ul>
+<div class="ae-4"><p>Focus on critical data integrity, data process and the overall safety of the subject
+</p></div>
+
+
+              </li>
+          </ul>
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+<section class="slide whiteSlide " name="am-14">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <h1 class="ae-1 fromLeft sourceSans ultraBold small ">Project Execution Stage</h1>
+              <div class="ae-2 fromLeft light ">
+                <!-- <p class="cropBottom template-text-11">Published Regulatory and Industry Guidance for Risk Based Monitoring.</p> -->
+              </div>
+            </li>
+            <li class="col-6-12 ae-1 equalElement toRight " data-action="zoom" style="height: 207px;">
+              <img class=" slide-8"  src="assets/images/slide-21.png" style="width: 100%;"  data-action="zoom">
+            </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="slide whiteSlide " name="am-15">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <h1 class="ae-1 fromLeft sourceSans ultraBold small ">Adaptive Monitoring Roles</h1>
+              <div class="ae-2 fromLeft light ">
+                <!-- <p class="cropBottom template-text-11">Published Regulatory and Industry Guidance for Risk Based Monitoring.</p> -->
+              </div>
+            </li>
+            <li class="col-6-12 ae-1 equalElement toRight " data-action="zoom" style="height: 207px;">
+              <img class=" slide-8"  src="assets/images/slide-22.png" style="width: 100%;"  data-action="zoom">
+            </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="slide whiteSlide " name="am-16">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <h1 class="ae-1 fromLeft sourceSans ultraBold small ">Evolution of the Data Scientist Role</h1>
+              <div class="ae-2 fromLeft light ">
+                <p class="cropBottom template-text-11">Data Quality Manager
+</p>
+              </div>
+            </li>
+            <li class="col-6-12 ae-1 equalElement toRight " data-action="zoom" style="height: 207px;">
+              <img class=" slide-8"  src="assets/images/slide-23.png" style="width: 100%;"  data-action="zoom">
+            </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="slide whiteSlide " name="am-17">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <h1 class="ae-1 fromLeft sourceSans ultraBold small ">Technologies in Adaptive Monitoring</h1>
+              <div class="ae-2 fromLeft light ">
+                <!-- <p class="cropBottom template-text-11">Published Regulatory and Industry Guidance for Risk Based Monitoring.</p> -->
+              </div>
+            </li>
+            <li class="col-6-12 ae-1 equalElement toRight " data-action="zoom" style="height: 207px;">
+              <img class=" slide-8"  src="assets/images/slide-24.png" style="width: 100%;"  data-action="zoom">
+            </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide #73 -->
+<section class="slide whiteSlide" name="am-18">
+  <div class="content background gradient-1" >
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+
+          <!--  Defining Angle Gradient Colors  -->
+
+
+          <ul class="grid">
+            <li class="col-6-12 left box-73">
+              <!-- <h3 class="uppercase ae-1">INDUSTRY GUIDANCE</h3> -->
+              <!-- <h1 class="sourceSans ultraBold small ae-2">PRA’s Adaptive Monitoring Solution
+</h1> -->
+              <div class="ae-1"><p>PRA is currently employing adaptive monitoring approaches for more than 25 Phase I-III and 30 Phase IV studies. </p></div>
+              <!-- <div class="ae-4"><p>In other words, they had removed all the graphic design from these photographs.</p></div> -->
+            </li>
+            <li class="col-6-12 left ae-1 fromRight">
+                        </li>
+            <li class="col-6-12 left">
+                <!-- <h2 class="small ae-3  ">GENERAL FEATURES</h2>
+                <div class="ae-4  ">
+                  <p class="noto">Building quality-by-design into trials  Early and ongoing risk assessment.  Focus on critical processes and critical data .  Use of quality indicators and thresholds(via dashboards) .  Adjustment of monitoring activities based on the issues and risks identified throughout the study (Risk assessment meetings).   
+.</p>
+                </div> -->
+                <div class="ae-2"><p>Clients are requesting an adaptive monitoring approach in 30%-40% of new requests for proposal (RFPs). </p></div>
+                <ul class="progress  ae-3">
+
+                  <li data-name="" data-percent="30%-40%"> <svg viewBox="-10 -10 220 220">
+                <g fill="none" stroke-width="6" transform="translate(100,100)">
+                <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="#000"></path>
+                <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="#000"></path>
+                <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="#000"></path>
+                <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="#000"></path>
+                <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="#000"></path>
+                <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="#000"></path>
+                </g>
+                </svg> <svg viewBox="-10 -10 220 220">
+                <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="252"></path>
+                </svg> </li>
+
+
+
+
+
+                </ul>
+              </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink   " href="index.html#intro">Return to experiences</a></div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide #23 -->
+<!-- <section class=" slide fade ">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+
+        <h1 class="mega ae-2 bold italic">I know a little bit about Risk-Based or Adaptive Monitoring
+<span> </h1>
+
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url(assets/images/bg.jpg)"></div>
+</section> -->
+
+
+
+
+
+
+<!-- Slide #77 -->
+<section class="slide whiteSlide autoHeight" name="contact">
+  <div class="content" style="background:#A0A0A0">
+    <div class="container">
+      <div class="wrap">
+
+        <h1 class="small light sourceSans ae-1">Tell Us About Yourself</h1>
+        <div class="ae-2"><p>Lorem ipsum who are you, let's gather sme info.</p></div>
+
+        <div class="fix-10-12 box-42">
+          <div class="pad shadow selected ae-3 " style="background-color: #f7f7f7;">
+            <form class="wide center" action="">
+              <label class="uppercase ae-3 " for="name">Your Name</label>
+              <input class="stroke round wide ae-4 " id="name" type="text" name="name" placeholder="Email" >
+              <label class="uppercase ae-3  " for="email">Email Address</label>
+              <input class="stroke round wide ae-4 " id="email" type="email" name="email" placeholder="Email" required="true">
+              <label class="uppercase ae-5  " for="title">Title</label>
+              <input class="stroke round wide ae-6 " id="title" type="text" name="title" placeholder="Ex. CRA, DR., ..etc" required="true">
+              <small class="block ae-8 ">
+                <span class="text-42">We won't distribute or sell this information.</b></a>.</span>
+              </small>
+              <input class="button wide round uppercase ae-9 button-42 template-button-8 " type="submit" name="submit" value="Submit">
+            </form>
+          </div>
+          <small class="block ae-10 block-42 ">
+            <span class="text-42">Not interested?<a href="index.html" class="block bold">Go Back To Start Screen</a></span>
+          </small>
+        </div>
+
+        <!-- <div class="hr 1px" data-color="#ccc"></div>
+
+        <div style="display: inline-flex;">
+<div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+<div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+        </div> -->
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- BEGIN EMMI SLIDES -->
+
+
+<!-- Slide #79 -->
+<section id="intro" class="hideNav slide whiteSlide" name="emmi-begin">
+  <div class="content background gradient-2">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+          <div class="fix-10-12">
+            <h1 class="sourceSans small ae-1">Achieving Clinical Trial Success
+Through Patient Communication and Education</h1>
+
+          </div>
+          <ul class="grid fixedSpaces equal fromCenter">
+            <li class="col-4-12">
+
+                <div class="fix-5-12 box-54">
+          <a href="#emmi-1" class="deep_shadow"><div class="pad ae-4 shadow pad-54 blue-1 ">
+
+            <p class="small equalElement ae-7 " style="height: 81px;"><strong>Patient Engagement</strong><br> Powered by Emmi
+
+<br>
+</p>
+            <div class="button  round wide uppercase button-54 ae-8 " style="background: white;
+    color: rgba(17,19,20,0.6);">Start Here</div>
+          </div></a>
+        </div>
+
+            </li>
+            <li class="col-4-12">
+
+                <div class="fix-5-12 box-54">
+          <a href="#emmi-3"><div class="pad ae-4 shadow pad-54 blue-2 ">
+            <p class="small equalElement ae-7 " style="height: 81px;"><strong>How it Works
+</strong><br> Building a Client-Specific Engagement Program
+
+
+<br>
+</p>
+            <div class="button  round wide uppercase button-54 ae-8 " style="background: white;
+    color: rgba(17,19,20,0.6);">Start Here</div>
+          </div></a>
+        </div>
+
+            </li>
+            <li class="col-4-12">
+
+              <div class="fix-5-12 box-54">
+          <a href="#emmi-4"><div class="pad ae-4 shadow pad-54  blue-3">
+            <p class="small equalElement ae-7 " style="height: 81px;"><strong>Communication </strong><br> Throughout Clinical Trials
+
+
+<br>
+</p>
+            <div class="button  round wide uppercase button-54 ae-8 " style="background: white;
+    color: rgba(17,19,20,0.6);">Start Here</div>
+          </div></a>
+        </div>
+
+            </li>
+          </ul>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="intro" class="slide whiteSlide " name="emmi-1">
+  <div class="content background gradient-2">
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <h1 class="ae-1 fromLeft sourceSans light small "><strong>Emmi:</strong> A Leader in Superior Patient Engagement</h1>
+              <div class="ae-2 fromLeft light ">
+                <!-- <p class="cropBottom template-text-11">Published Regulatory and Industry Guidance for Risk Based Monitoring.</p> -->
+              </div>
+            </li>
+            <li class="col-8-12 ae-1 equalElement toRight " data-action="zoom" style="height: 207px;">
+              <img class=" slide-8"  src="assets/images/emmi-1.png" style="width: 100%;"  data-action="zoom">
+            </li>
+          </ul>
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="intro" class="slide whiteSlide " name="emmi-2">
+  <div class="content background gradient-2">
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <h1 class="ae-1 fromLeft sourceSans light small "><strong>PRA Patient Engagement:</strong><span class="small"> Powered by Emmi</span></h1>
+              <div class="ae-2 fromLeft light ">
+                <p class="cropBottom template-text-11">Published Regulatory and Industry Guidance for Risk Based Monitoring.</p>
+
+                <ul class="grid equal later  pt">
+                  <li class="col-12-12 ae-5    bullet" >
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Online, multimedia
+programs</p>
+                  </li>
+                  <li class="col-12-12 ae-6    bullet" >
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Interactive calls
+
+</p>
+                  </li>
+                  <li class="col-12-12 ae-7    bullet" >
+                    <!-- <h3 class="uppercase">Branding</h3> -->
+                    <p class="small">Text messages</p>
+                  </li>
+                  <li class="col-12-12 ae-8    bullet" >
+                    <!-- <h3 class="uppercase">Present</h3> -->
+                    <p class="small">Reminders</p>
+                  </li>
+
+
+                </ul>
+              </div>
+            </li>
+            <li class="col-6-12 ae-1 equalElement toRight " data-action="zoom" style="height: 207px;">
+              <img class=" slide-8"  src="assets/images/emmi-3-img.png" style="width: 100%;"  data-action="zoom">
+            </li>
+          </ul>
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE to 'How it works'</a></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="intro" class="slide whiteSlide " name="emmi-3">
+  <div class="content background gradient-2">
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <h1 class="ae-1 fromLeft sourceSans light small "><strong>How it Works</strong></h1>
+
+            </li>
+            <li class="col-6-12 ae-1 equalElement left " data-action="zoom" style="height: 207px;">
+              <div class="ae-2 fromLeft light ">
+                <p class="cropBottom template-text-11 ae-5">Step 1: Kickoff</p>
+
+                <ul class="grid equal later  pt">
+                  <li class="col-12-12 ae-5    bullet" >
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Determine program content, create a development timeline and identify key contacts.
+              </p>
+                  </li>
+                </ul>
+                <p class="cropBottom template-text-11 ae-5">Step 2: Script and Storyboards</p>
+
+                <ul class="grid equal later  pt">
+                  <li class="col-12-12 ae-5    bullet" >
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Draft script based on feedback from client, subject matter experts and Emmi.
+              Create storyboards if needed for client or regulatory review.
+
+              </p>
+                  </li>
+                </ul>
+                <p class="cropBottom template-text-11 ae-5">Step 3: Beta
+              </p>
+
+                <ul class="grid equal later  pt">
+                  <li class="col-12-12 ae-5    bullet" >
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Beta version sent to the client with all revisions. Final review occurs for any last minor changes.
+
+              </p>
+                  </li>
+                </ul>
+                <p class="cropBottom template-text-11 ae-5">Step 4: English Release
+              </p>
+
+                <ul class="grid equal later  pt">
+                  <li class="col-12-12 ae-5    bullet" >
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Program delivered to the Emmi Client Services department to coordinate the release.
+              </p>
+                  </li>
+                </ul>
+                <p class="cropBottom template-text-11 ae-5">Step 5: Translations & Localization
+
+              </p>
+
+                <ul class="grid equal later  pt">
+                  <li class="col-12-12 ae-5    bullet" >
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">English version used as basis for translation & localization.
+
+              </p>
+                  </li>
+                </ul>
+              </div>            </li>
+          </ul>
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE to 'Communication'</a></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide #79 -->
+<section id="intro" class=" slide whiteSlide" name="emmi-4">
+  <div class="content background gradient-2">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed">
+          <div class="fix-10-12">
+            <h1 class="sourceSans small ae-1">Communicating Throughout Clinical Trials</h1>
+
+          </div>
+          <div class="fix-10-12">
+
+          <ul class="grid fixedSpaces equal fromCenter">
+            <li class="col-3-12">
+
+                <div class="fix-5-12 box-54  ae-2">
+          <a href="#emmi-5" class=""><img class=" slide-8"  src="assets/images/recruit.png" style="width: 100%;" >
+</a>
+        </div>
+
+            </li>
+            <li class="col-3-12">
+
+                <div class="fix-5-12 box-54  ae-3">
+          <a href="#emmi-5" class=""><img class=" slide-8"  src="assets/images/screen.png" style="width: 100%;" >
+</a>
+        </div>
+
+            </li>
+            <li class="col-3-12">
+
+                <div class="fix-5-12 box-54  ae-4">
+          <a href="#emmi-7" class=""><img class=" slide-8"  src="assets/images/consent.png" style="width: 100%;" >
+</a>
+        </div>
+
+            </li>
+            <li class="col-3-12">
+
+                <div class="fix-5-12 box-54  ae-5">
+          <a href="#emmi-8" class=""><img class=" slide-8"  src="assets/images/retain.png" style="width: 100%;" >
+</a>
+        </div>
+
+            </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink   nextSlide" >Continue to 'Recruit'</a></div>
+
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="intro" class="slide whiteSlide " name="emmi-5">
+  <div class="content background gradient-2">
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <div class="fix-8-12  toLeft ae-1">
+
+              <ul class="grid fixedSpaces equal fromCenter">
+                <li class="col-3-12">
+
+                    <div class="fix-5-12 box-54  ae-2">
+              <a href="#emmi-5" class=""><img class=" slide-8" src="assets/images/recruit.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12">
+
+                    <div class="fix-5-12 box-54  ae-3" style="opacity: .5;">
+              <a href="#emmi-5" class=""><img class=" slide-8" src="assets/images/screen.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12" style="opacity: .5;">
+
+                    <div class="fix-5-12 box-54  ae-4">
+              <a href="#emmi-7" class=""><img class=" slide-8" src="assets/images/consent.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12" style="opacity: .5;">
+
+                    <div class="fix-5-12 box-54  ae-5">
+              <a href="#emmi-8" class=""><img class=" slide-8" src="assets/images/retain.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+              </ul>
+              </div>
+              <!-- <img class=" slide-8  ae-1"  src="assets/images/recruit.png" style="width: 20%;" ><img class=" slide-8  ae-2"  src="assets/images/screen.png" style="width: 20%;" > -->
+              <!-- <h1 class="ae-1 fromLeft sourceSans light small "><strong>PRA Patient Engagement:</strong><span class="small"> Powered by Emmi</span></h1> -->
+              <div class="ae-2 fromLeft light pt ">
+                <p class="cropBottom template-text-11  ae-2">Help patients:
+</p>
+
+                <ul class="grid equal later  pt">
+                  <li class="col-12-12 ae-5    bullet" >
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Understand clinical trials
+are a treatment option
+
+</p>
+                  </li>
+                  <li class="col-12-12 ae-6    bullet" >
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Understand what clinical
+trials entail
+
+
+
+</p>
+                  </li>
+                  <li class="col-12-12 ae-7    bullet" >
+                    <!-- <h3 class="uppercase">Branding</h3> -->
+                    <p class="small">Become comfortable with
+a clinical trial
+
+</p>
+                  </li>
+                  <li class="col-12-12 ae-8    bullet" >
+                    <!-- <h3 class="uppercase">Present</h3> -->
+                    <p class="small">Make their treatment decisions
+</p>
+                  </li>
+
+
+                </ul>
+              </div>
+            </li>
+            <li class="col-6-12 ae-6 equalElement toRight " data-action="zoom" style="height: 207px;">
+              <div class="videoThumbnail videoThumbnail-82 noShadow popupTrigger ae-3  " data-popup-id="biomarkers">
+            <img src="assets/images/biomarkers.png" class="wide" alt="Video" data-action="zoom">
+          </div>
+            </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE to 'screen'</a></div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Popup Video -->
+  <div class="popup " data-popup-id="biomarkers">
+    <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+    <div class="content">
+      <div class="container">
+        <div class="wrap">
+          <div class="fix-12-12">
+            <div class="embedVideo popupContent">
+              <iframe src="video-biomarkers.html"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="intro" class="slide whiteSlide " name="emmi-6">
+  <div class="content background gradient-2">
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <div class="fix-8-12  toLeft ae-1">
+
+              <ul class="grid fixedSpaces equal fromCenter">
+                <li class="col-3-12">
+
+                    <div class="fix-5-12 box-54  ae-2" style="opacity: .5;">
+              <a href="#emmi-5" class=""><img class=" slide-8" src="assets/images/recruit.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12">
+
+                    <div class="fix-5-12 box-54  ae-3">
+              <a href="#emmi-5" class=""><img class=" slide-8" src="assets/images/screen.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12" >
+
+                    <div class="fix-5-12 box-54  ae-4" style="opacity: .5;">
+              <a href="#emmi-7" class=""><img class=" slide-8" src="assets/images/consent.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12" style="opacity: .5;">
+
+                    <div class="fix-5-12 box-54  ae-5">
+              <a href="#emmi-8" class=""><img class=" slide-8" src="assets/images/retain.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+              </ul>
+              </div>
+              <h1 class="ae-1 fromLeft sourceSans light small pt">Multimedia Programs & Assessments</h1>
+              <div class="ae-2 fromLeft light ">
+                <!-- <p class="cropBottom template-text-11">Published Regulatory and Industry Guidance for Risk Based Monitoring.</p> -->
+              </div>
+            </li>
+            <li class="col-8-12 ae-1 equalElement toRight " data-action="zoom" style="height: 207px;">
+              <img class=" slide-8"  src="assets/images/emmi-7.png" style="width: 100%;"  data-action="zoom">
+            </li>
+          </ul>
+
+
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE to 'consent'</a></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="intro" class="slide whiteSlide " name="emmi-7">
+  <div class="content background gradient-2">
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <div class="fix-8-12  toLeft ae-1">
+
+              <ul class="grid fixedSpaces equal fromCenter">
+                <li class="col-3-12">
+
+                    <div class="fix-5-12 box-54  ae-2" style="opacity: .5;">
+              <a href="#emmi-5" class=""><img class=" slide-8" src="assets/images/recruit.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12">
+
+                    <div class="fix-5-12 box-54  ae-3" style="opacity: .5;">
+              <a href="#emmi-5" class=""><img class=" slide-8" src="assets/images/screen.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12" >
+
+                    <div class="fix-5-12 box-54  ae-4">
+              <a href="#emmi-7" class=""><img class=" slide-8" src="assets/images/consent.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12" style="opacity: .5;">
+
+                    <div class="fix-5-12 box-54  ae-5">
+              <a href="#emmi-8" class=""><img class=" slide-8" src="assets/images/retain.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+              </ul>
+              </div>              <h1 class="ae-1 fromLeft sourceSans light small pt">Multimedia programs
+help patients:
+</h1>
+              <div class="ae-2 fromLeft light ">
+                <!-- <p class="cropBottom template-text-11  ae-2">Help patients:
+</p> -->
+
+                <ul class="grid equal later ">
+                  <li class="col-12-12 ae-5    bullet" >
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Understand the details by simplifying complex information
+
+
+</p>
+                  </li>
+                  <li class="col-12-12 ae-6    bullet" >
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Be informed and prepared
+for informed consent
+conversations
+
+
+</p>
+                  </li>
+
+
+
+                </ul>
+              </div>
+            </li>
+            <li class="col-6-12 ae-6 equalElement toRight " data-action="zoom" style="height: 207px;">
+              <div class="videoThumbnail videoThumbnail-82 noShadow popupTrigger ae-3 " data-popup-id="emmi-7-vid">
+            <img src="assets/images/blank.png" class="wide" alt="Video" >
+          </div>
+            </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE to 'retain'</a></div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+
+  <!-- Popup Video -->
+  <div class="popup  " data-popup-id="emmi-7-vid">
+    <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+    <div class="content">
+      <div class="container">
+        <div class="wrap">
+          <div class="fix-12-12">
+            <div class="embedVideo popupContent">
+              <iframe src="video-informedconsent.html" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+<section id="intro" class="slide whiteSlide " name="emmi-8">
+  <div class="content background gradient-2">
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+              <div class="fix-8-12  toLeft ae-1">
+
+              <ul class="grid fixedSpaces equal fromCenter">
+                <li class="col-3-12">
+
+                    <div class="fix-5-12 box-54  ae-2" style="opacity: .5;">
+              <a href="#emmi-5" class=""><img class=" slide-8" src="assets/images/recruit.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12">
+
+                    <div class="fix-5-12 box-54  ae-3" style="opacity: .5;">
+              <a href="#emmi-5" class=""><img class=" slide-8" src="assets/images/screen.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12" >
+
+                    <div class="fix-5-12 box-54  ae-4" style="opacity: .5;">
+              <a href="#emmi-7" class=""><img class=" slide-8" src="assets/images/consent.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+                <li class="col-3-12" >
+
+                    <div class="fix-5-12 box-54  ae-5">
+              <a href="#emmi-8" class=""><img class=" slide-8" src="assets/images/retain.png" style="width: 100%;">
+              </a>
+              </div>
+
+                </li>
+              </ul>
+              </div>
+              <h1 class="ae-1 fromLeft sourceSans light small pt ">Programs, calls and reminders help patients:
+</h1>
+              <div class="ae-2 fromLeft light ">
+                <!-- <p class="cropBottom template-text-11">Published Regulatory and Industry Guidance for Risk Based Monitoring.</p> -->
+
+                <ul class="grid equal later  pt">
+                  <li class="col-12-12 ae-5    bullet" >
+                    <!-- <h3 class="uppercase">Mockup</h3> -->
+                    <p class="small">Remember their to-do’s</p>
+                  </li>
+                  <li class="col-12-12 ae-6    bullet" >
+                    <!-- <h3 class="uppercase">Layers</h3> -->
+                    <p class="small">Adhere with study protocols
+
+</p>
+                  </li>
+                  <li class="col-12-12 ae-7    bullet" >
+                    <!-- <h3 class="uppercase">Branding</h3> -->
+                    <p class="small">Stay motivated to participate</p>
+                  </li>
+
+
+
+                </ul>
+              </div>
+            </li>
+            <li class="col-6-12 ae-1 equalElement toRight "  style="height: 207px;">
+              <div class="videoThumbnail videoThumbnail-82 noShadow popupTrigger ae-3 " data-popup-id="66">
+            <img src="assets/images/emmi-9.png" class="wide" alt="Video" >
+          </div>
+
+            </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink nextSlide  ">CONTINUE</a></div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+
+  <!-- Popup Video -->
+  <div class="popup " data-popup-id="66">
+    <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+    <div class="content">
+      <div class="container">
+        <div class="wrap">
+          <div class="fix-12-12">
+            <div class="embedVideo popupContent">
+              <iframe src="audio.html"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<section id="intro" class="slide whiteSlide " name="emmi-9">
+  <div class="content background gradient-2">
+    <div class="container">
+      <div class="wrap">
+<div class="col-12-12 boxed">
+        <div class="col-12-12">
+          <ul class="grid equal">
+            <li class="col-4-12 left equalElement template-cell-11" style="height: 207px;">
+
+              <h1 class="ae-1 fromLeft sourceSans light small  ">Communicating in Ways Patients Prefer
+</h1>
+<div class=" noShadow  ae-3 pt" data-popup-id="82">
+<img src="assets/images/emmi-10.png" class="wide" >
+</div>
+            </li>
+            <li class="col-6-12 ae-1 equalElement toRight " data-action="zoom" style="height: 207px;">
+              <div class="videoThumbnail videoThumbnail-82 noShadow popupTrigger ae-3 " data-popup-id="82">
+            <img src="assets/images/blank.png" class="wide" alt="Video" data-action="zoom">
+          </div>
+            </li>
+          </ul>
+
+          <div class="hr 1px" data-color="#ccc"></div>
+
+          <div style="display: inline-flex;">
+  <div class="goback left"><a class="button round uppercase pink  prevSlide  ">GO BACK</a></div>
+  <div class="gonext right"><a class="button round uppercase pink   " href="index.html#intro">Return to experiences</a></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+    <!-- Popup Video -->
+    <div class="popup  " data-popup-id="82">
+      <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+      <div class="content">
+        <div class="container">
+          <div class="wrap">
+            <div class="fix-12-12">
+              <div class="embedVideo popupContent">
+                <iframe src="video-communicating.html" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+<!-- END EMMI SLIDES -->
+
+
+<!-- BEGIN TABLEAU SLIDE -->
+<section id="intro" class=" slide whiteSlide" name="tableau-1">
+  <div class="content background gradient-3">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed" style="height: 900px;">
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- END TABLEAU SLIDE -->
+
+<!-- BEGIN TABLEAU SLIDE -->
+<section id="intro" class=" slide whiteSlide" name="tableau-2">
+  <div class="content background gradient-4">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="col-12-12  boxed" style="height: 900px;">
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- END TABLEAU SLIDE -->
+
+
+
+    </body>
+</html>
