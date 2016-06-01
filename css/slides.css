@@ -1,10 +1,10 @@
 /*** 2015 (C) BY DESIGNMODO: http://designmodo.com/slides/  */
 
 .raleway {
-  font-family:"Raleway", sans-serif !important;
+  font-family:"Avenir Next", sans-serif !important;
 }
 .sourceSans {
-  font-family:"Source Sans Pro", sans-serif !important;
+  font-family:"Avenir Next", sans-serif !important;
 }
 
 .avenir {
@@ -76,7 +76,7 @@ html.scrollable body {
 .slides {
   color:#fff;
   fill:#fff;
-  font-family:"Raleway";
+  font-family:"Avenir Next";
   background:#111;
 
   -webkit-font-smoothing:antialiased;
@@ -224,7 +224,7 @@ h1,
   font-family: 'bitter', serif;
   font-size: 100px;
   line-height: 1.05;
-  letter-spacing: 0.03em;
+  /*letter-spacing: 0.03em;*/
   font-weight: 400;
   margin-bottom: 18px;
   margin-left: -0.05em;
@@ -281,7 +281,7 @@ h2.huge,
 h3,
 .h3 {
   font-size:25px;
-  font-family:"Raleway";
+  font-family:"Avenir Next";
   margin-bottom:12px;
   font-weight:600;
   margin-left:-0.01em;
@@ -330,7 +330,7 @@ h1 + h3,
 h4,
 .h4 {
   font-size:22px;
-  font-family:"Raleway";
+  font-family:"Avenir Next";
   margin-bottom:10px;
   font-weight:600;
 }
@@ -343,7 +343,7 @@ h4.micro,
 h5,
 .h5 {
   font-size:19px;
-  font-family:"Raleway";
+  font-family:"Avenir Next";
   font-weight:600;
   margin-bottom:3px;
 }
@@ -467,7 +467,7 @@ small.small {
 
 /* buttons */
 .button {
-  font-family:"Raleway";
+  font-family:"Avenir Next";
   display:inline-block;
   border-radius:4px;
   padding:12px 22px;
@@ -1665,7 +1665,7 @@ body .slide.whiteSlide {
  *
  */
 .panel {
-  font-family:'Raleway', sans-serif;
+  font-family:'Avenir Next', sans-serif;
   position:fixed;
   left:0;
   width:100%;
@@ -2526,7 +2526,7 @@ html:not(.page-loaded) .slides.scroll .slide {
  *
  */
 .sidebar {
-  font-family:"Raleway";
+  font-family:"Avenir Next";
   position:fixed;
   top:0;
   right:0;
@@ -2764,7 +2764,7 @@ html:not(.page-loaded) .slides.scroll .slide {
 
 /* POPUP */
 .popup {
-  font-family:"Raleway";
+  font-family:"Avenir Next";
   position:fixed;
   top:0;
   right:0;
@@ -3980,7 +3980,7 @@ h3.text-66 span { letter-spacing:0.2em;}
 .box-67 .thumbnail-67 img { border-radius: 20px 20px 0 0; -webkit-backface-visibility: hidden; -webkit-transition:0.5s; transition:0.5s;}
 .box-67:hover .thumbnail-67 img { -webkit-transform: scale(1.0225); transform: scale(1.0225);}
 .name-67 { padding:16px 15px 20px; background:#FFFFFF;}
-.category-67 { text-transform:uppercase; letter-spacing:2.2px; font-size:11px; font-family:Raleway; font-weight:600; opacity:0.7; margin-bottom:7px;}
+.category-67 { text-transform:uppercase; letter-spacing:2.2px; font-size:11px; font-family:Avenir Next; font-weight:600; opacity:0.7; margin-bottom:7px;}
 .title-67 { font-family:"Playfair Display"; font-size:28px; letter-spacing:-1px; line-height:1;}
 .grid-68 img { margin-top:20px; margin-bottom: 20px; -webkit-transition:0.25s; transition:0.25s;}
 .grid-68 img:hover { -webkit-transform:scale(1.1); transform:scale(1.1);}
@@ -3993,14 +3993,14 @@ h3.text-66 span { letter-spacing:0.2em;}
 .box-69:hover:after { opacity:0.92;}
 .cell-69 { position:absolute; height:100%; width:100%; z-index:10; opacity:0; -webkit-transition:0.5s; transition:0.5s; -webkit-transform:translateY(10px); transform:translateY(10px);}
 .box-69:hover .cell-69 { opacity:1; -webkit-transform:translateY(0px); transform:translateY(0px);}
-.category-69 { text-transform:uppercase; letter-spacing:2.2px; font-size:11px; font-family:Raleway; font-weight:600; opacity:0.7; margin-bottom:7px;}
+.category-69 { text-transform:uppercase; letter-spacing:2.2px; font-size:11px; font-family:Avenir Next; font-weight:600; opacity:0.7; margin-bottom:7px;}
 .title-69 { font-family:"Playfair Display";font-size:28px;letter-spacing:-1px;line-height:1.21;max-width:80%;margin:0 auto;-webkit-transform:translateY(5px);transform:translateY(5px);-webkit-transition:0.5s;transition:0.5s;}
 .box-69:hover .title-69 {  -webkit-transform:translateY(0px); transform:translateY(0px);}
 .box-70 { display: block; background-color: #ccc; color:#303030; background-repeat: no-repeat; background-position: right top; background-size:contain; border-radius: 20px; margin:10px auto; max-width:400px;}
 .box-70:hover { background-color:#fff !important; opacity:1; box-shadow: 0px 22px 23px 0px rgba(0,0,0,0.40);}
 .thumbnail-70 { height:0; padding-bottom:100%;}
 .info-70 { padding:10%;}
-.category-70 { text-transform:uppercase; letter-spacing:2.2px; font-size:11px; font-family:Raleway; font-weight:600; opacity:0.7; margin-bottom:7px;}
+.category-70 { text-transform:uppercase; letter-spacing:2.2px; font-size:11px; font-family:Avenir Next; font-weight:600; opacity:0.7; margin-bottom:7px;}
 .title-70 { font-family:"Playfair Display"; font-size:28px; letter-spacing:-1px; line-height:1.21; max-width:80%; margin:0 auto;}
 .box-70 p { margin-top:16px;}
 .box-70 .button { margin-left:0; margin-right:0;}
