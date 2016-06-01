@@ -22,7 +22,10 @@ html{
   padding:0;
   overflow: hidden;
   -webkit-backface-visibility: hidden;
-  -moz-user-select: none;
+  -webkit-user-select:none !important;
+  -moz-user-select:none !important;
+  -ms-user-select:none !important;
+  user-select:none !important;
 }
 body{
   position: absolute;
@@ -1126,13 +1129,6 @@ body .slide.whiteSlide {
 .wrap:not(.noSpaces),
 .spaceWrap {
   padding:calc(5.56% + 50px) calc(8% + 15px);
-}
-
-.wrap * {
-  -webkit-user-select:text;
-  -moz-user-select:text;
-  -ms-user-select:text;
-  user-select:text;
 }
 
 .slide .background {
