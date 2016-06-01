@@ -1522,18 +1522,46 @@ $(document).ready(function() { "use strict";
     },3000);
   });
 
+  //    ____          _                    ____                    _          _   _   _
+  //  /  ___|   _ ___| |_ ___  _ __ ___   / ___| _ __   __ _  __ _| |__   ___| |_| |_(_)
+  //  | |  | | | / __| __/ _ \| '_ ` _ \  \___ \| '_ \ / _` |/ _` | '_ \ / _ \ __| __| |
+  //  | |__| |_| \__ \ || (_) | | | | | |  ___) | |_) | (_| | (_| | | | |  __/ |_| |_| |
+  //   \____\__,_|___/\__\___/|_| |_| |_| |____/| .__/ \__,_|\__, |_| |_|\___|\__|\__|_|
+  //                                            |_|          |___/
+
   $("[name='contact'] form").on("submit", function(e) {
     e.preventDefault();
     var name = $(this).find("input#name").val();
     var email = $(this).find("input#email").val();
     var title = $(this).find("input#title").val();
     $(this).find(".button").addClass("green").attr("value", "Thank you!");
-    console.log(name, email, title);
+
+    var user = {
+      name: name,
+      email: email,
+      title: title
+    };
+    localStorage.setObject(window.currUserId, user);
 
     setTimeout(function() {
       window.changeSlide(2);
+      $("#surveyBtn").fadeOut(300);
     }, 1000);
   });
 
-// end on dom ready
-});
+  $("#beginBtn").on("click", function(e) {
+    var d = new Date();
+    window.currUserId = d.getTime();
+    $("#surveyBtn").show();
+  });
+
+}); // end on dom ready
+
+// enable objects in localStorage
+Storage.prototype.setObject = function(key, value) {
+    this.setItem(key, JSON.stringify(value));
+}
+Storage.prototype.getObject = function(key) {
+    var value = this.getItem(key);
+    return value && JSON.parse(value);
+}
