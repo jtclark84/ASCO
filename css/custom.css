@@ -458,24 +458,23 @@ nav.panel.nav-buttons {
 .gradient-1 {
 /* Rectangle 47: */
 background-image: linear-gradient(-171deg, #4AC29F 0%, #01A9CE 100%);
-border-radius: 18px;
 }
 
 .gradient-2 {
 
 background-image: linear-gradient(-146deg, #4D3363 0%, #9500DB 100%);
-border-radius: 18px;
 
 }
 
 .gradient-3 {
 background-image: linear-gradient(-171deg, #B300E9 0%, #C800A1 100%);
-border-radius: 18px;
 }
 
 .gradient-4 {
 background-image: linear-gradient(-171deg, #FFC005 0%, #FF6A02 100%);
-border-radius: 18px;
+}
+.gradient-5 {
+  background-image: linear-gradient(-136deg, #AF1459 0%, #EB1B75 100%);
 }
 
 .panel.nav-buttons.pt {

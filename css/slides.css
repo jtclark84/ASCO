@@ -1,10 +1,10 @@
 /*** 2015 (C) BY DESIGNMODO: http://designmodo.com/slides/  */
 
 .raleway {
-  font-family:"Raleway", sans-serif !important;
+  font-family:"Avenir Next", sans-serif !important;
 }
 .sourceSans {
-  font-family:"Source Sans Pro", sans-serif !important;
+  font-family:"Avenir Next", sans-serif !important;
 }
 
 .avenir {
@@ -223,7 +223,7 @@ h1,
   font-family: 'bitter', serif;
   font-size: 100px;
   line-height: 1.05;
-  letter-spacing: 0.03em;
+  /*letter-spacing: 0.03em;*/
   font-weight: 400;
   margin-bottom: 18px;
   margin-left: -0.05em;
