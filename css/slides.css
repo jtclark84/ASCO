@@ -1131,13 +1131,6 @@ body .slide.whiteSlide {
   padding:calc(5.56% + 50px) calc(8% + 15px);
 }
 
-.wrap * {
-  -webkit-user-select:text;
-  -moz-user-select:text;
-  -ms-user-select:text;
-  user-select:text;
-}
-
 .slide .background {
   position:absolute;
   top:0;
