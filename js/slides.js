@@ -887,7 +887,7 @@ $(document).ready(function() { "use strict";
 		/* [ ← ] */
 		if (e.keyCode === 37){
       e.preventDefault();
-			if (window.horizontalMode){ window.changeSlide('decrease'); }
+			// if (window.horizontalMode){ window.changeSlide('decrease'); }
 		}
 
 		/* [ ↑ ] */
@@ -908,7 +908,7 @@ $(document).ready(function() { "use strict";
 		/* [ → ] */
 		if (e.keyCode === 39){
       e.preventDefault();
-		  if (window.horizontalMode){ window.changeSlide('increase'); }
+		  // if (window.horizontalMode){ window.changeSlide('increase'); }
 		}
 
 		/* [ ↓ ] */
@@ -1063,6 +1063,10 @@ $(document).ready(function() { "use strict";
        Sidebar Toggle                         */
 
   $('.sidebarTrigger').on('click', function(){
+    if (window.sidebarShown) {
+      hideSidebar();
+      return false;
+    }
 
     var sidebarID = $(this).data('sidebar-id'),
         element = $('.sidebar[data-sidebar-id="' + sidebarID + '"]');
@@ -1080,7 +1084,7 @@ $(document).ready(function() { "use strict";
   });
 
   //Hide on click outside
-  $(document).on('mouseup touchstart', function (e){
+  $(document).on('mouseup touchstart click', function (e){
     var container = $(".sidebarShown .sidebar, .dropdownTrigger");
     if (!container.is(e.target) && container.has(e.target).length === 0) {
       hideSidebar();
@@ -1149,6 +1153,9 @@ $(document).ready(function() { "use strict";
     if (window.popupShown){
 
       var el = $('.popupShown .popup.autoplay.visible iframe');
+
+      // refresh iframe to stop it from playing
+      $(".popupContent iframe").attr( 'src', function ( i, val ) { return val; });
 
       //stop autoplay
       if (el.length > 0) {
@@ -1505,12 +1512,27 @@ $(document).ready(function() { "use strict";
   });
 
   //CONTACT FORM
-  $("#contact-form").ajaxForm(function() {
+  $("#contact-form").ajaxForm(function(e) {
+    console.debug(e);
+    e.preventDefault();
     $("#contact-form .button").attr('value','Done!').removeClass('pink').addClass('green');
     setTimeout(function(){
       $("#contact-form .button").attr('value','Send Message').removeClass('green').addClass('pink');
       $("#contact-form")[0].reset();
     },3000);
+  });
+
+  $("[name='contact'] form").on("submit", function(e) {
+    e.preventDefault();
+    var name = $(this).find("input#name").val();
+    var email = $(this).find("input#email").val();
+    var title = $(this).find("input#title").val();
+    $(this).find(".button").addClass("green").attr("value", "Thank you!");
+    console.log(name, email, title);
+
+    setTimeout(function() {
+      window.changeSlide(2);
+    }, 1000);
   });
 
 // end on dom ready
