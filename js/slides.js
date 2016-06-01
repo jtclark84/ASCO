@@ -1545,12 +1545,14 @@ $(document).ready(function() { "use strict";
 
     setTimeout(function() {
       window.changeSlide(2);
+      $("#surveyBtn").fadeOut(300);
     }, 1000);
   });
 
   $("#beginBtn").on("click", function(e) {
     var d = new Date();
     window.currUserId = d.getTime();
+    $("#surveyBtn").show();
   });
 
 }); // end on dom ready
