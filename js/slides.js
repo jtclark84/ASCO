@@ -892,6 +892,7 @@ $(document).ready(function() { "use strict";
 
 		/* [ ↑ ] */
 		if (e.keyCode === 38){
+      return false; // man
       e.preventDefault();
 			if (!window.horizontalMode){
         window.changeSlide('decrease');
@@ -913,6 +914,7 @@ $(document).ready(function() { "use strict";
 
 		/* [ ↓ ] */
 		if (e.keyCode === 40){
+      return false; // man
       e.preventDefault();
       if (!window.horizontalMode) {
          window.changeSlide('increase');
